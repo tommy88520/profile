@@ -1,0 +1,190 @@
+.navHeader {
+  height: 106px;
+  & .logo {
+    width: 58px;
+    height: 58px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 10px;
+    line-height: 58px;
+    text-align: center;
+    font-size: 20px;
+  }
+  & .nav {
+    width: 800px;
+    height: 58px;
+    line-height: 58px;
+  }
+}
+.myImg {
+  // width: 1041px;
+  // height: 630px;
+  // background: url(./IMG/IMG_4783.JPG) center center /cover;
+  //   width: 1400px;
+  height: 900px;
+  & .mainImg {
+    background: url(./IMG/IMG_4783.JPG) center center / cover;
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  & .info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(130px);
+    // background-color: #000000;
+    & .btn {
+      padding: 15px 20px;
+      border-radius: 100px;
+    }
+  }
+}
+.skills {
+  width: 100%;
+  height: 100vh;
+  background-color: #19222e;
+  border-radius: 100px;
+  & .skillSection {
+    width: 1280px;
+    height: 100%;
+    & .skillDetail {
+      //   line-height:300px
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+.encourage {
+  width: 100%;
+  height: 900px;
+}
+.Here {
+  width: 100%;
+  height: 100vh;
+  border-radius: 100px;
+  overflow: hidden;
+  //   background: url('./IMG/IMG_4783.JPG');
+  & .HereImgDiv {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    & .HereImg {
+      width: 550px;
+      height: 400px;
+    }
+  }
+
+  & .leftCircle {
+    // position: relative;
+
+    background-color: #ffffff;
+    width: 250px;
+    height: 500px;
+    border-radius: 500px 0px 0px 500px;
+    // border: 10px solid #19222e;
+    // box-shadow: #19222e 0 0 0 200px;
+  }
+  & .coverLeftCircle {
+    background-color: transparent;
+    // width: 500px;
+    // height: 850px;
+    width: 250px;
+    height: 500px;
+    border-radius: 500px 0px 0px 500px;
+    // border-radius: 850px 0px 0px 850px;
+    // border-top: 150px solid #19222e;
+    // border-left: 150px solid #19222e;
+    // border-bottom: 150px solid #19222e;
+    // background-clip: content-box;
+    // clip: rect(0 0 200px 0);
+    // box-shadow: #19222e 0 0 0 200px;
+    box-shadow: -500px 0px 0 500px #19222e;
+  }
+  & .rightCircle {
+    background-color: #ffffff;
+    width: 250px;
+    height: 500px;
+    border-radius: 0px 500px 500px 0px;
+    // outline: 10px solid #19222e;
+  }
+  & .coverRightCircle {
+    background-color: transparent;
+    width: 250px;
+    height: 500px;
+    border-radius: 0px 500px 500px 0px;
+    // outline: 10px solid #19222e;
+  }
+}
+.vespa {
+  width: 100%;
+  height: 100vh;
+  border-radius: 100px;
+  overflow: hidden;
+  //   background-image: url(./IMG/IMG_4783.JPG);
+  & .vespaLeft {
+    // background-color: #f0592b;
+    height: 100%;
+    & .vespaLeftCircle {
+      // position: relative;
+
+      background-color: transparent;
+      width: 250px;
+      height: 500px;
+      border-radius: 500px 0px 0px 500px;
+      // border: 10px solid #19222e;
+      box-shadow: -500px 0px 0 500px #f0592b;
+    }
+    & .vespaRightCircle {
+      background-color: transparent;
+      width: 250px;
+      height: 500px;
+      border-radius: 0px 500px 500px 0px;
+      box-shadow: 500px 0px 0px 500px #f0592b;
+
+      // outline: 10px solid #19222e;
+    }
+  }
+  & .vespaRight {
+    height: 100%;
+    background-color: #f0592b;
+  }
+}
+.monterose {
+  width: 100%;
+  height: 100vh;
+  border-radius: 100px;
+  overflow: hidden;
+  //   background-image: url(./IMG/IMG_4783.JPG);
+  & .monteroseLeft {
+    // background-color: #f0592b;
+    height: 100%;
+    & .monteroseLeftCircle {
+      // position: relative;
+
+      background-color: transparent;
+      width: 250px;
+      height: 500px;
+      border-radius: 500px 0px 0px 500px;
+      // border: 10px solid #19222e;
+      box-shadow: -500px 0px 0 500px #1b6c51;
+    }
+    & .monteroseRightCircle {
+      background-color: transparent;
+      width: 250px;
+      height: 500px;
+      border-radius: 0px 500px 500px 0px;
+      box-shadow: 500px 0px 0px 500px #1b6c51;
+
+      // outline: 10px solid #19222e;
+    }
+  }
+  & .monteroseRight {
+    height: 100%;
+    background-color: #1b6c51;
+  }
+}
+.MyActivity{
+    width: 100%;
+    height: 100vh;
+
+}

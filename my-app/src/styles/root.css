@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 整個捲軸 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* 捲軸的軌道 */
+::-webkit-scrollbar-track {
+  background: #19222e;
+}
+/*捲軸尚未滑到的軌道*/
+::-webkit-scrollbar-track-piece {
+  background: #19222e;
+}
+/* 滑動的區塊 */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+}
+/* 滑鼠移到滑動的區塊上 */
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
