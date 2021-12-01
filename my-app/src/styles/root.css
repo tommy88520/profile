@@ -24,3 +24,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #aaa;
 }
+body{
+    /* cursor:url('./../IMG/Group1.svg'),-moz-zoom-out;
+    cursor:url('./../IMG/Group1.svg'),auto;
+    cursor:url('./../IMG/Group1.svg'),pointer; */
+    /* cursor:none; */
+}

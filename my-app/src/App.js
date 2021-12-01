@@ -1,12 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from './App.module.scss'
 import classnames from 'classnames'
 import mainImg from './IMG/IMG_4783.JPG'
+import AnimatedCursor from 'react-animated-cursor'
+import Facebook from './IMG/Facebook - Negative.svg'
+import Github from './IMG/Github - Negative.svg'
+import Instagram from './IMG/Instagram - Negative.svg'
+import LinkedIn from './IMG/LinkedIn - Negative.svg'
 
 function App() {
+  // const cursor = useRef()
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
   return (
     <>
       <div className={styles.scrollBar}>
@@ -22,11 +30,21 @@ function App() {
           <div className="container flex justify-between text-primary">
             <div className={classnames(styles.logo)}>HYM</div>
             <div className={classnames(styles.nav, 'flex', 'justify-around')}>
-              <div>SKILLS</div>
-              <div>PROJECTS</div>
-              <div>ACTIVITIES</div>
-              <div>CONTACTS</div>
-              <div>RESUME</div>
+              <div className={classnames(styles.navLink)}>
+                <span className={classnames(styles.navSkill)}>SKILLS</span>
+              </div>
+              <div className={classnames(styles.navLink)}>
+                <span className={classnames(styles.navSkill)}>PROJECTS</span>
+              </div>
+              <div className={classnames(styles.navLink)}>
+                <span className={classnames(styles.navSkill)}>ACTIVITIES</span>
+              </div>
+              <div className={classnames(styles.navLink)}>
+                <span className={classnames(styles.navSkill)}>CONTACTS</span>
+              </div>
+              <div className={classnames(styles.navLink)}>
+                <span className={classnames(styles.navSkill)}>RESUME</span>
+              </div>
             </div>
           </div>
         </header>
@@ -224,10 +242,182 @@ function App() {
         </section>
         {/* myActivity */}
         <section>
-          <h1 className={classnames(styles.MyActivity, 'uppercase','text-6xl')}>
+          <h1
+            className={classnames(
+              styles.MyActivity,
+              'uppercase',
+              'text-center'
+            )}
+          >
             my activity
           </h1>
         </section>
+        {/* Activity Card */}
+        <section
+          className={classnames(
+            styles.activityCardSection,
+            'grid',
+            'justify-center'
+          )}
+        >
+          <div
+            className={classnames(
+              'grid',
+              'xl:grid-cols-3',
+              'grid-cols-2',
+              'gap-x-28',
+              'gap-y-20'
+            )}
+          >
+            <div className={classnames(styles.activityCard)}></div>
+            <div className={classnames(styles.activityCard)}></div>
+            <div className={classnames(styles.activityCard)}></div>
+            <div className={classnames(styles.activityCard)}></div>
+            <div className={classnames(styles.activityCard)}></div>
+            <div className={classnames(styles.activityCard)}></div>
+          </div>
+        </section>
+        {/* contactSection */}
+        <section
+          className={classnames(
+            styles.contactSection,
+            'flex',
+            'flex-col',
+            'items-center',
+            'pt-44',
+            'pb-10'
+          )}
+        >
+          <div className={classnames('flex', 'flex-col', styles.partersItems)}>
+            <div
+              className={classnames(
+                'grid',
+                'grid-cols-3',
+                'items-center',
+                styles.partersBorder
+              )}
+            >
+              <div className="col-span-1 text-4xl">經歷</div>
+              <div
+                className={classnames(
+                  styles.partersDetail,
+                  'col-span-2',
+                  'grid',
+                  'grid-cols-3',
+                  'gap-x-5',
+                  'text-right'
+                )}
+              >
+                <p className={styles.partersInfo}>2018市長選舉</p>
+                <p className={styles.partersInfo}>2020立委選舉</p>
+                <p className={styles.partersInfo}>資策會前端工程師班</p>
+              </div>
+            </div>
+            <div
+              className={classnames(
+                'grid',
+                'grid-cols-3',
+                'items-center',
+                styles.partersBorder2
+              )}
+            >
+              <div className="col-span-1 text-4xl">教育程度</div>
+              <div
+                className={classnames(
+                  styles.partersDetail,
+                  'col-span-2',
+                  'grid',
+                  'grid-cols-2',
+                  'gap-x-5',
+                  'text-right'
+                )}
+              >
+                <p className={styles.partersInfo}>淡江大學公共行政學系</p>
+                <p className={styles.partersInfo}>政治大學國發所碩二</p>
+              </div>
+            </div>
+            <div
+              className={classnames(
+                'grid',
+                'grid-cols-3',
+                'items-center',
+                styles.partersBorder
+              )}
+            >
+              <div className="col-span-1 text-4xl">其他</div>
+              <div
+                className={classnames(
+                  styles.partersDetail,
+                  'col-span-2',
+                  'grid',
+                  'grid-cols-2',
+                  'gap-x-5',
+                  'text-right'
+                )}
+              >
+                <p className={styles.partersInfo}>
+                  萬芳高中科學班小論文助理老師
+                </p>
+                <p className={styles.partersInfo}>伯大尼孤兒院課後半讀志工</p>
+              </div>
+            </div>
+          </div>
+          <div
+            className={classnames(styles.contactSeciton, 'flex', 'flex-col')}
+          >
+            <div className={classnames(styles.contactMe)}>聯絡方式</div>
+            <div className={classnames('grid', 'grid-cols-4','mt-24')}>
+              <div >
+                <p className="text-3xl">居住地區</p>
+                <p className={classnames('mt-10','text-xl')}>台北市文山區</p>
+              </div>
+              <div>
+                <p className="text-3xl">手機號碼</p>
+                <p className={classnames('mt-10','text-xl')}>0926266959</p>
+              </div>
+              <div>
+                <p className="text-3xl">信箱</p>
+                <p className={classnames('mt-10','text-xl')}>tommy8852024@gmail.com</p>
+              </div>
+              <div>
+                <p className="text-3xl">社群</p>
+                <div className={classnames('flex','mt-10')}>
+                  <img
+                    src={Facebook}
+                    alt=""
+                    className={classnames(styles.icon)}
+                  />
+                  <img
+                    src={Github}
+                    alt=""
+                    className={classnames(styles.icon)}
+                  />
+                  <img
+                    src={Instagram}
+                    alt=""
+                    className={classnames(styles.icon)}
+                  />
+                  <img
+                    src={LinkedIn}
+                    alt=""
+                    className={classnames(styles.icon)}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* cursor */}
+        <div className="Cursor">
+          <AnimatedCursor
+            innerSize={20}
+            outerSize={20}
+            color="246, 195, 39"
+            outerAlpha={0.2}
+            innerScale={1}
+            outerScale={5}
+          />
+        </div>
       </div>
     </>
   )
