@@ -11,7 +11,7 @@ import LinkedIn from './IMG/LinkedIn - Negative.svg'
 import VanillaTilt from 'vanilla-tilt'
 
 function App() {
-  const [windowLocation, setWindowLocation] = useState('')
+  // const [windowLocation, setWindowLocation] = useState('')
   const [navBar, setNavBar] = useState(false)
   const [skillshrink, setSkillshrink] = useState(false)
   const [hereShrink, setHereShrink] = useState(false)
@@ -21,9 +21,13 @@ function App() {
   const [collapse, setCollapse] = useState(true)
 
   const nav = useRef()
+  const skillOffsetTop = useRef()
   const encourageOffsetTop = useRef()
   const hereOffsetTop = useRef()
   const myActivityOffsetTop = useRef()
+  const myActivityCardOffsetTop = useRef()
+
+  const contactOffsetTop = useRef()
 
   const card1 = useRef()
   const card2 = useRef()
@@ -32,6 +36,19 @@ function App() {
   const card5 = useRef()
   const card6 = useRef()
 
+  const scrollToRef = (ref = null, offset = 0) => {
+    if (ref && ref.current) {
+      window.scrollTo({
+        behavior: 'smooth',
+        top: ref.current.offsetTop + offset,
+      })
+    } else {
+      window.scrollTo({
+        behavior: 'smooth',
+        top: offset,
+      })
+    }
+  }
   useEffect(() => {
     window.addEventListener('scroll', nabShrink)
     VanillaTilt.init(card1.current, {
@@ -175,9 +192,9 @@ function App() {
                 <span
                   className={classnames(styles.navSkill)}
                   onClick={() => {
-                    // window.location.hash = '#skills'
-                    // window.pageYOffset = hereOffsetTop.current.offsetTop
-                    console.log(window.pageYOffset)
+                    if (skillOffsetTop !== null) {
+                      scrollToRef(skillOffsetTop)
+                    }
                   }}
                 >
                   SKILLS
@@ -189,7 +206,9 @@ function App() {
                 <span
                   className={classnames(styles.navSkill)}
                   onClick={() => {
-                    // window.location.hash = '#Here'
+                    if (hereOffsetTop !== null) {
+                      scrollToRef(hereOffsetTop)
+                    }
                   }}
                 >
                   PROJECTS
@@ -198,12 +217,30 @@ function App() {
               <div
                 className={classnames(collapse ? styles.navLink : styles.show)}
               >
-                <span className={classnames(styles.navSkill)}>ACTIVITIES</span>
+                <span
+                  className={classnames(styles.navSkill)}
+                  onClick={() => {
+                    if (myActivityCardOffsetTop !== null) {
+                      scrollToRef(myActivityCardOffsetTop)
+                    }
+                  }}
+                >
+                  ACTIVITIES
+                </span>
               </div>
               <div
                 className={classnames(collapse ? styles.navLink : styles.show)}
               >
-                <span className={classnames(styles.navSkill)}>CONTACTS</span>
+                <span
+                  className={classnames(styles.navSkill)}
+                  onClick={() => {
+                    if (contactOffsetTop !== null) {
+                      scrollToRef(contactOffsetTop)
+                    }
+                  }}
+                >
+                  CONTACTS
+                </span>
               </div>
               <div
                 className={classnames(collapse ? styles.navLink : styles.show)}
@@ -263,6 +300,7 @@ function App() {
         <section
           className={classnames(styles.skills, 'flex', 'justify-center')}
           id="skills"
+          ref={skillOffsetTop}
         >
           <div
             className={classnames(
@@ -478,6 +516,7 @@ function App() {
             'grid',
             'justify-center'
           )}
+          ref={myActivityCardOffsetTop}
         >
           <div
             className={classnames(
@@ -590,6 +629,7 @@ function App() {
             'pt-44',
             'pb-10'
           )}
+          ref={contactOffsetTop}
         >
           <div className={classnames('flex', 'flex-col', styles.partersItems)}>
             <div

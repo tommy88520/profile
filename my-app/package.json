@@ -1,6 +1,6 @@
 {
   "name": "my-app",
-  "homepage": "https://tommy88520.github.io/Tommy_profolio",
+  "homepage": "https://tommy88520.github.io/profile/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "npm run build-css && craco  start",
     "build": "npm run build-css && craco  build",
     "test": "npm run build-css && craco  test",
