@@ -1,51 +1,224 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './App.module.scss'
 import classnames from 'classnames'
 import mainImg from './IMG/IMG_4783.JPG'
+import hereImg from './IMG/HERE.png'
 import AnimatedCursor from 'react-animated-cursor'
 import Facebook from './IMG/Facebook - Negative.svg'
 import Github from './IMG/Github - Negative.svg'
 import Instagram from './IMG/Instagram - Negative.svg'
 import LinkedIn from './IMG/LinkedIn - Negative.svg'
+import VanillaTilt from 'vanilla-tilt'
 
 function App() {
-  // const cursor = useRef()
+  const [windowLocation, setWindowLocation] = useState('')
+  const [navBar, setNavBar] = useState(false)
+  const [skillshrink, setSkillshrink] = useState(false)
+  const [hereShrink, setHereShrink] = useState(false)
+  const [myActivityShrink, setMyActivityShrink] = useState(false)
+  const [myActivityChangeColor, setMyActivityChangeColor] = useState(false)
+
+  const [collapse, setCollapse] = useState(true)
+
+  const nav = useRef()
+  const encourageOffsetTop = useRef()
+  const hereOffsetTop = useRef()
+  const myActivityOffsetTop = useRef()
+
+  const card1 = useRef()
+  const card2 = useRef()
+  const card3 = useRef()
+  const card4 = useRef()
+  const card5 = useRef()
+  const card6 = useRef()
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    window.addEventListener('scroll', nabShrink)
+    VanillaTilt.init(card1.current, {
+      max: 25,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.8,
+    })
+    VanillaTilt.init(card2.current, {
+      max: 25,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.8,
+    })
+    VanillaTilt.init(card3.current, {
+      max: 25,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.8,
+    })
+    VanillaTilt.init(card4.current, {
+      max: 25,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.8,
+    })
+    VanillaTilt.init(card5.current, {
+      max: 25,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.8,
+    })
+    VanillaTilt.init(card6.current, {
+      max: 25,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.8,
+    })
 
+    // console.log(encourageffsetTop.current.offsetTop)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [collapse])
+  function nabShrink() {
+    // let userScrollTOP06 = window.innerHeight * 0.7 + window.scrollY //使用者真正觸發的位置，頁面的八成
+    // window.location.hash = ''
+
+    const encourageSection = encourageOffsetTop.current.offsetTop
+    const hereSection = hereOffsetTop.current.offsetTop
+    const myActivitySection2 = myActivityOffsetTop.current.offsetTop
+
+    if (window.pageYOffset >= 400) {
+      setNavBar(true)
+      setSkillshrink(true)
+    } else {
+      // setCollapse(true)
+      setNavBar(false)
+      setSkillshrink(false)
+      setCollapse(true)
+    }
+    // encourageSection
+    if (window.pageYOffset >= encourageSection - 500) {
+      // console.log(123)
+      setSkillshrink(false)
+    }
+    // hereSection
+    if (window.pageYOffset >= hereSection - 300) {
+      setHereShrink(true)
+    } else {
+      setHereShrink(false)
+    }
+    // myActivity
+    if (window.pageYOffset >= myActivitySection2 - 400) {
+      setMyActivityShrink(true)
+      // console.log('123')
+      // setMyActivityChangeColor(true)
+    } else {
+      setMyActivityShrink(false)
+      setMyActivityChangeColor(false)
+    }
+    if (window.pageYOffset >= myActivitySection2 - 50) {
+      // setMyActivityShrink(true)
+
+      setMyActivityChangeColor(true)
+    }
+    // console.log(window.pageYOffset)
+  }
   return (
     <>
       <div className={styles.scrollBar}>
         <header
           className={classnames(
-            styles.navHeader,
-            'flex',
-            'w-full',
-            'justify-center',
-            'items-center'
+            navBar ? styles.navHeaderShrink : styles.navHeader
           )}
+          refs={nav}
         >
-          <div className="container flex justify-between text-primary">
+          <div
+            className={classnames(
+              'container',
+              'flex',
+              'justify-between',
+              'text-primary',
+              styles.basicNav
+            )}
+          >
             <div className={classnames(styles.logo)}>HYM</div>
-            <div className={classnames(styles.nav, 'flex', 'justify-around')}>
-              <div className={classnames(styles.navLink)}>
-                <span className={classnames(styles.navSkill)}>SKILLS</span>
+            <div className={classnames(styles.nav)}>
+              <button
+                className={classnames(navBar ? styles.hamburger : 'd-none')}
+                onClick={() => {
+                  setCollapse(!collapse)
+                }}
+              >
+                <div
+                  className={classnames(
+                    'bg-primary',
+                    'w-full',
+                    'h-2',
+                    collapse ? styles.lineNotActive : styles.lineActive1
+                  )}
+                ></div>
+                <div
+                  className={classnames(
+                    'bg-primary',
+                    'w-full',
+                    'h-2',
+                    collapse ? styles.lineNotActive : styles.lineActive2
+                  )}
+                ></div>
+                <div
+                  className={classnames(
+                    'bg-primary',
+                    'w-full',
+                    'h-2',
+                    collapse ? styles.lineNotActive : styles.lineActive3
+                  )}
+                ></div>
+              </button>
+              <div
+                className={classnames(collapse ? styles.navLink : styles.show)}
+              >
+                <span
+                  className={classnames(styles.navSkill)}
+                  onClick={() => {
+                    // window.location.hash = '#skills'
+                    // window.pageYOffset = hereOffsetTop.current.offsetTop
+                    console.log(window.pageYOffset)
+                  }}
+                >
+                  SKILLS
+                </span>
               </div>
-              <div className={classnames(styles.navLink)}>
-                <span className={classnames(styles.navSkill)}>PROJECTS</span>
+              <div
+                className={classnames(collapse ? styles.navLink : styles.show)}
+              >
+                <span
+                  className={classnames(styles.navSkill)}
+                  onClick={() => {
+                    // window.location.hash = '#Here'
+                  }}
+                >
+                  PROJECTS
+                </span>
               </div>
-              <div className={classnames(styles.navLink)}>
+              <div
+                className={classnames(collapse ? styles.navLink : styles.show)}
+              >
                 <span className={classnames(styles.navSkill)}>ACTIVITIES</span>
               </div>
-              <div className={classnames(styles.navLink)}>
+              <div
+                className={classnames(collapse ? styles.navLink : styles.show)}
+              >
                 <span className={classnames(styles.navSkill)}>CONTACTS</span>
               </div>
-              <div className={classnames(styles.navLink)}>
+              <div
+                className={classnames(collapse ? styles.navLink : styles.show)}
+              >
                 <span className={classnames(styles.navSkill)}>RESUME</span>
               </div>
             </div>
+            <AnimatedCursor
+              innerSize={30}
+              outerSize={20}
+              color="2, 58, 32"
+              outerAlpha={0.4}
+              innerScale={1}
+              outerScale={5}
+            />
           </div>
         </header>
         {/* 大圖區 */}
@@ -89,51 +262,59 @@ function App() {
         {/* SKILLS */}
         <section
           className={classnames(styles.skills, 'flex', 'justify-center')}
+          id="skills"
         >
           <div
             className={classnames(
-              styles.skillSection,
-              'grid',
-              'grid-cols-3',
-              'text-center',
-              'text-white'
+              styles.skillsInside,
+              skillshrink ? styles.skillsActive : ''
             )}
           >
-            <div className={classnames(styles.skillDetail)}>
-              <p>技能</p>
-              <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
-            </div>
-            <div className={classnames(styles.skillDetail)}>
-              <p>技能</p>
-              <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
-            </div>
-            <div className={classnames(styles.skillDetail)}>
-              <p>技能</p>
-              <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
-            </div>
-            <div className={classnames(styles.skillDetail)}>
-              <p>技能</p>
-              <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
-            </div>
-            <div className={classnames(styles.skillDetail)}>
-              <p>技能</p>
-              <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
-            </div>
-            <div className={classnames(styles.skillDetail)}>
-              <p>技能</p>
-              <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
-            </div>
-            <div className={classnames(styles.skillDetail)}>
-              <p>技能</p>
-              <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
-            </div>
-            <div className={classnames(styles.skillDetail)}>
-              <p>技能</p>
-              <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
-            </div>
-            <div className={classnames(styles.skillDetail)}>
-              <p>技能</p>
-              <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+            <div
+              className={classnames(
+                styles.skillSection,
+                'grid',
+                'grid-cols-3',
+                'text-center',
+                'text-white'
+              )}
+            >
+              <div className={classnames(styles.skillDetail)}>
+                <p>技能</p>
+                <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+              </div>
+              <div className={classnames(styles.skillDetail)}>
+                <p>技能</p>
+                <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+              </div>
+              <div className={classnames(styles.skillDetail)}>
+                <p>技能</p>
+                <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+              </div>
+              <div className={classnames(styles.skillDetail)}>
+                <p>技能</p>
+                <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+              </div>
+              <div className={classnames(styles.skillDetail)}>
+                <p>技能</p>
+                <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+              </div>
+              <div className={classnames(styles.skillDetail)}>
+                <p>技能</p>
+                <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+              </div>
+              <div className={classnames(styles.skillDetail)}>
+                <p>技能</p>
+                <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+              </div>
+              <div className={classnames(styles.skillDetail)}>
+                <p>技能</p>
+                <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+              </div>
+              <div className={classnames(styles.skillDetail)}>
+                <p>技能</p>
+                <p>技能介紹nvjfnvejvnevnenvnefnlv</p>
+              </div>
             </div>
           </div>
         </section>
@@ -146,6 +327,7 @@ function App() {
             'justify-center',
             'items-center'
           )}
+          ref={encourageOffsetTop}
         >
           <div>
             <h1 className={classnames('text-6xl font-semibold', 'mb-10')}>
@@ -158,35 +340,55 @@ function App() {
         </section>
         {/* Here作品區域 */}
         <section
-          className={classnames(styles.Here, 'grid', 'grid-cols-2', 'relative')}
+          className={classnames(
+            styles.Here,
+            'relative',
+            'flex',
+            'justify-center'
+          )}
+          ref={hereOffsetTop}
+          id="Here"
         >
           <div
             className={classnames(
-              'bg-primary',
-              'col-span-1',
-              'flex',
-              'justify-center',
-              'items-center'
+              styles.HereIn,
+              'grid',
+              'grid-cols-2',
+              hereShrink ? styles.HereInActive : ''
             )}
           >
-            <div className={classnames(styles.HereImgDiv)}>
-              <img
-                src={mainImg}
-                alt=""
-                className={classnames(styles.HereImg)}
-              />
+            <div
+              className={classnames(
+                'bg-primary',
+                'col-span-1',
+                'flex',
+                'justify-center',
+                'items-center'
+              )}
+            >
+              <div className={classnames(styles.HereImgDiv)}>
+                <img
+                  src={hereImg}
+                  alt=""
+                  className={classnames(
+                    styles.HereImg,
+                    hereShrink ? styles.ImgOut : ''
+                  )}
+                />
+              </div>
+              <div className={classnames(styles.leftCircle)}></div>
+              <div className={classnames(styles.rightCircle)}></div>
             </div>
-            <div className={classnames(styles.leftCircle)}></div>
-            <div className={classnames(styles.rightCircle)}></div>
+            <div className={classnames('bg-primary', 'col-span-1')}></div>
           </div>
-          <div className={classnames('bg-primary', 'col-span-1')}></div>
-          {/* 分隔 */}
+          {/* 覆蓋分隔 */}
           <div
             className={classnames(
               'absolute',
-              styles.Here,
+              styles.HereCover,
               'grid',
-              'grid-cols-2'
+              'grid-cols-2',
+              hereShrink ? styles.HereCoverActive : ''
             )}
           >
             <div
@@ -241,12 +443,29 @@ function App() {
           ></div>
         </section>
         {/* myActivity */}
-        <section>
+
+        <section
+          className={classnames(
+            'overflow-hidden relative',
+            styles.myActivitySection
+          )}
+          ref={myActivityOffsetTop}
+        >
+          <div className={classnames(styles.activityBg)}></div>
+          <div
+            className={classnames(
+              styles.activityBg2,
+              myActivityChangeColor ? styles.activityBg2Active : ''
+            )}
+          ></div>
+
           <h1
             className={classnames(
               styles.MyActivity,
               'uppercase',
-              'text-center'
+              'text-center',
+              myActivityShrink ? styles.MyActivityActive : '',
+              myActivityChangeColor ? styles.changeColor : ''
             )}
           >
             my activity
@@ -269,12 +488,96 @@ function App() {
               'gap-y-20'
             )}
           >
-            <div className={classnames(styles.activityCard)}></div>
-            <div className={classnames(styles.activityCard)}></div>
-            <div className={classnames(styles.activityCard)}></div>
-            <div className={classnames(styles.activityCard)}></div>
-            <div className={classnames(styles.activityCard)}></div>
-            <div className={classnames(styles.activityCard)}></div>
+            <div
+              className={classnames(
+                styles.activityCard,
+                'flex',
+                'flex-col',
+                'items-center'
+              )}
+              ref={card1}
+            >
+              <div className={classnames(styles.cardImg)}></div>
+              <p className="text-3xl py-5">Joeylene Rivera</p>
+              <p className="text-xl px-5">
+                A kiddo who uses Bootstrap and Laravel in web development.
+              </p>
+            </div>
+            <div
+              className={classnames(
+                styles.activityCard,
+                'flex',
+                'flex-col',
+                'items-center'
+              )}
+              ref={card2}
+            >
+              <div className={classnames(styles.cardImg)}></div>
+              <p className="text-3xl py-5">Joeylene Rivera</p>
+              <p className="text-xl px-5">
+                A kiddo who uses Bootstrap and Laravel in web development.
+              </p>
+            </div>
+            <div
+              className={classnames(
+                styles.activityCard,
+                'flex',
+                'flex-col',
+                'items-center'
+              )}
+              ref={card3}
+            >
+              <div className={classnames(styles.cardImg)}></div>
+              <p className="text-3xl py-5">Joeylene Rivera</p>
+              <p className="text-xl px-5">
+                A kiddo who uses Bootstrap and Laravel in web development.
+              </p>
+            </div>
+            <div
+              className={classnames(
+                styles.activityCard,
+                'flex',
+                'flex-col',
+                'items-center'
+              )}
+              ref={card4}
+            >
+              <div className={classnames(styles.cardImg)}></div>
+              <p className="text-3xl py-5">Joeylene Rivera</p>
+              <p className="text-xl px-5">
+                A kiddo who uses Bootstrap and Laravel in web development.
+              </p>
+            </div>
+            <div
+              className={classnames(
+                styles.activityCard,
+                'flex',
+                'flex-col',
+                'items-center'
+              )}
+              ref={card5}
+            >
+              <div className={classnames(styles.cardImg)}></div>
+              <p className="text-3xl py-5">Joeylene Rivera</p>
+              <p className="text-xl px-5">
+                A kiddo who uses Bootstrap and Laravel in web development.
+              </p>
+            </div>
+            <div
+              className={classnames(
+                styles.activityCard,
+                'flex',
+                'flex-col',
+                'items-center'
+              )}
+              ref={card6}
+            >
+              <div className={classnames(styles.cardImg)}></div>
+              <p className="text-3xl py-5">Joeylene Rivera</p>
+              <p className="text-xl px-5">
+                A kiddo who uses Bootstrap and Laravel in web development.
+              </p>
+            </div>
           </div>
         </section>
         {/* contactSection */}
@@ -332,7 +635,7 @@ function App() {
                   'text-right'
                 )}
               >
-                <p className={styles.partersInfo}>淡江大學公共行政學系</p>
+                <p className={styles.partersInfo2}>淡江大學公共行政學系</p>
                 <p className={styles.partersInfo}>政治大學國發所碩二</p>
               </div>
             </div>
@@ -358,7 +661,7 @@ function App() {
                 <p className={styles.partersInfo}>
                   萬芳高中科學班小論文助理老師
                 </p>
-                <p className={styles.partersInfo}>伯大尼孤兒院課後半讀志工</p>
+                <p className={styles.partersInfo}>伯大尼孤兒院課後伴讀志工</p>
               </div>
             </div>
           </div>
@@ -366,22 +669,24 @@ function App() {
             className={classnames(styles.contactSeciton, 'flex', 'flex-col')}
           >
             <div className={classnames(styles.contactMe)}>聯絡方式</div>
-            <div className={classnames('grid', 'grid-cols-4','mt-24')}>
-              <div >
+            <div className={classnames('grid', 'grid-cols-4', 'mt-24')}>
+              <div>
                 <p className="text-3xl">居住地區</p>
-                <p className={classnames('mt-10','text-xl')}>台北市文山區</p>
+                <p className={classnames('mt-10', 'text-xl')}>台北市文山區</p>
               </div>
               <div>
                 <p className="text-3xl">手機號碼</p>
-                <p className={classnames('mt-10','text-xl')}>0926266959</p>
+                <p className={classnames('mt-10', 'text-xl')}>0926266959</p>
               </div>
               <div>
                 <p className="text-3xl">信箱</p>
-                <p className={classnames('mt-10','text-xl')}>tommy8852024@gmail.com</p>
+                <p className={classnames('mt-10', 'text-xl')}>
+                  tommy8852024@gmail.com
+                </p>
               </div>
               <div>
                 <p className="text-3xl">社群</p>
-                <div className={classnames('flex','mt-10')}>
+                <div className={classnames('flex', 'mt-10')}>
                   <img
                     src={Facebook}
                     alt=""
@@ -410,10 +715,11 @@ function App() {
         {/* cursor */}
         <div className="Cursor">
           <AnimatedCursor
-            innerSize={20}
+            innerSize={30}
             outerSize={20}
             color="246, 195, 39"
-            outerAlpha={0.2}
+            // color="2, 5, 39"
+            outerAlpha={0.4}
             innerScale={1}
             outerScale={5}
           />

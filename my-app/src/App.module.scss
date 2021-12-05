@@ -1,7 +1,20 @@
 .navHeader {
+  position: fixed;
+
+  display: flex;
   height: 106px;
+  width: 100%;
+  // width: 232px;
+  justify-content: center;
+  align-items: center;
+  transition: 0.7s;
+  z-index: 2;
+  right: 0;
+  //   background-color: #fff;
+  border-radius: 10px;
+
   & .logo {
-    width: 58px;
+    min-width: 58px;
     height: 58px;
     background: #000000;
     color: #ffffff;
@@ -14,22 +27,122 @@
     width: 800px;
     height: 58px;
     line-height: 58px;
-    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    // z-index: 2;
+    // background-color: #fff;
+    // transition: 0.7s;
     & .navLink {
-      //   cursor: url(''), -moz-zoom-out;
-      //   cursor: url(''), auto;
-      //   cursor: url('./IMG/Group\ 2.svg'), pointer;
-      //   font-size: 20px;
-      //   transition: 0.5s;
       width: 63px;
-      & .navSkill{
-          transition: 0.5s;
+      & .navSkill {
+        transition: 0.5s;
       }
       & .navSkill:hover {
         // cursor: url('./IMG/Group\ 2.svg'), pointer;
         font-size: 20px;
-        transition:  .5s;
+        transition: 0.5s;
       }
+    }
+  }
+}
+.navHeaderShrink {
+  position: fixed;
+  display: flex;
+  //   height: 106px;
+  width: 180px;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  transition: 0.7s;
+  top: 50px;
+  right: 10px;
+  //   background-color: #fff;
+
+  border-radius: 10px;
+  & .logo {
+    min-width: 58px;
+    height: 58px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 10px;
+    line-height: 58px;
+    text-align: center;
+    font-size: 20px;
+  }
+  & .nav {
+    width: 800px;
+    // height: 58px;
+    line-height: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #f6c327;
+    align-items: center;
+    border-radius: 10px;
+    // transition: 0.7s;
+    & .hamburger {
+      min-width: 58px;
+      max-width: 58px;
+      min-height: 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      position: relative;
+      transition: all 0.5s;
+
+      // align-items: center;
+      // cursor: pointer;
+      & .lineNotActive {
+        border-radius: 5px;
+        transition: all 0.5s;
+      }
+      & .lineActive1 {
+        // transform: rotate(45deg)
+        opacity: 0;
+        transition: all 0.5s;
+      }
+      & .lineActive2 {
+        position: absolute;
+        bottom: 20px;
+        left: -17px;
+        transform: rotate(45deg);
+        border-radius: 5px;
+        transition: all 0.5s;
+      }
+
+      & .lineActive3 {
+        position: absolute;
+        bottom: 20px;
+        right: -18px;
+        transform: rotate(-45deg);
+        border-radius: 5px;
+        transition: all 0.5s;
+      }
+    }
+    & .navLink1 {
+      width: 63px;
+    }
+    & .navLink {
+      width: 63px;
+      max-height: 0px;
+      height: 100%;
+      opacity: 0;
+      transition: 1s;
+      overflow: hidden;
+      & .navSkill {
+        transition: 0.5s;
+      }
+      & .navSkill:hover {
+        font-size: 20px;
+        transition: 0.5s;
+      }
+    }
+    & .show {
+      width: 63px;
+      height: 58px;
+      transition: 1s;
+      opacity: 1;
+      text-align: center;
     }
   }
 }
@@ -38,7 +151,8 @@
   // height: 630px;
   // background: url(./IMG/IMG_4783.JPG) center center /cover;
   //   width: 1400px;
-  height: 900px;
+  height: 100vh;
+  padding-top: 106px;
   & .mainImg {
     background: url(./IMG/IMG_4783.JPG) center center / cover;
     border-radius: 100px;
@@ -58,8 +172,20 @@
 .skills {
   width: 100%;
   height: 100vh;
-  background-color: #19222e;
   border-radius: 100px;
+
+  & .skillsInside {
+    width: 80%;
+    background-color: #19222e;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+  }
+  & .skillsActive {
+    width: 100%;
+    transition: 0.5s;
+  }
   & .skillSection {
     width: 1280px;
     height: 100%;
@@ -71,23 +197,43 @@
     }
   }
 }
+
 .encourage {
   width: 100%;
-  height: 900px;
+  height: 100vh;
 }
 .Here {
-  width: 100%;
+  //   width: 100%;
   height: 100vh;
   border-radius: 100px;
   overflow: hidden;
   //   background: url('./IMG/IMG_4783.JPG');
+  & .HereIn {
+    height: 100vh;
+    width: 80%;
+    border-radius: 100px;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  & .HereInActive {
+    width: 100%;
+    transition: 0.5s;
+  }
   & .HereImgDiv {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+
     & .HereImg {
       width: 550px;
-      height: 400px;
+      height: 430px;
+      transform: translateX(-105px);
+      border-radius: 10px;
+      transition: all 0.5s;
+    }
+    & .ImgOut {
+      transform: translateX(80px);
+      transition: all 0.5s;
     }
   }
 
@@ -100,6 +246,17 @@
     border-radius: 500px 0px 0px 500px;
     // border: 10px solid #19222e;
     // box-shadow: #19222e 0 0 0 200px;
+  }
+  & .HereCover {
+    width: 80%;
+    height: 100vh;
+    border-radius: 100px;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  & .HereCoverActive {
+    width: 100%;
+    transition: 0.5s;
   }
   & .coverLeftCircle {
     background-color: transparent;
@@ -137,7 +294,13 @@
   height: 100vh;
   border-radius: 100px;
   overflow: hidden;
-  //   background-image: url(./IMG/IMG_4783.JPG);
+  background: url(./IMG/Group3_w.svg);
+  background-attachment: fixed;
+  background-size: cover;
+  @media (max-width: 1440px) {
+    background: url(./IMG/Group3.png);
+    background-size: cover;
+  }
   & .vespaLeft {
     // background-color: #f0592b;
     height: 100%;
@@ -171,7 +334,13 @@
   height: 100vh;
   border-radius: 100px;
   overflow: hidden;
-  //   background-image: url(./IMG/IMG_4783.JPG);
+  background: url(./IMG/Group3_w.svg);
+  background-attachment: fixed;
+  background-size: cover;
+  @media (max-width: 1440px) {
+    background: url(./IMG/Group3.png);
+    background-size: cover;
+  }
   & .monteroseLeft {
     // background-color: #f0592b;
     height: 100%;
@@ -200,22 +369,79 @@
     background-color: #1b6c51;
   }
 }
+.myActivitySection {
+  height: 100vh;
+  //   background-color: #19222e;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  border-radius: 100px;
+}
+.activityBg {
+  position: absolute;
+  min-width: 100%;
+  height: 100vh;
+  top: 0;
+  //   background-color: #f0592b;
+  // z-index: 1;
+  //   background-color: #19222e;
+}
+.activityBg2 {
+  position: absolute;
+  min-width: 100%;
+  height: 100vh;
+  top: 0;
+  background-color: #19222e;
+  // z-index: 2;
+  transform: translateX(100vw);
+  transition: 1s;
+
+  //   background-color: #19222e;
+}
+.activityBg2Active {
+  transform: translateX(0vw);
+}
 .MyActivity {
   width: 100%;
   height: 100vh;
   line-height: 100vh;
-  font-size: 100px;
+  font-size: 150px;
+  letter-spacing: 10px;
+  font-weight: bold;
+  transform: translateX(1500px);
+  transition: all 1s;
+  background-color: #19222e;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.MyActivityActive {
+  transform: translateX(0px);
+  transition: all 1s;
+}
+.changeColor {
+  background-color: #ffffff;
+
+  transition: 1s;
 }
 .activityCardSection {
   background-color: #19222e;
   padding: 50px 0px;
   // max-width: 1280px;
+  border-radius: 100px 100px 0px 0px;
 
   & .activityCard {
     width: 310px;
     height: 395px;
     background-color: #ffffff;
-    border-radius: 50px;
+    padding: 30px 0px;
+    // border-radius: 50px;
+    & .cardImg {
+      width: 250px;
+      height: 150px;
+      background-color: #19222e;
+      border-radius: 50px;
+    }
   }
 }
 .contactSection {
@@ -239,6 +465,12 @@
         transition: 0.5s;
         transform: translateX(-5px);
       }
+      & .partersInfo {
+        font-size: 20px;
+        height: 110px;
+        line-height: 110px;
+      }
+
       // 懸念  一個一個跳出來
     }
 
@@ -258,7 +490,14 @@
       font-size: 20px;
       height: 110px;
       line-height: 110px;
+    //   transform: translateX(-200px);
     }
+    & .partersInfo2 {
+        font-size: 20px;
+        height: 110px;
+        line-height: 110px;
+        // transform: translateX(-20px);
+      }
   }
   & .contactSeciton {
     width: 70%;
@@ -272,8 +511,8 @@
       margin-top: 20px;
       text-align: center;
     }
-    & .icon{
-        margin-right: 25px;
+    & .icon {
+      margin-right: 25px;
     }
   }
 }
