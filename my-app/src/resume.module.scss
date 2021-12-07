@@ -1,0 +1,77 @@
+.background {
+  width: 100%;
+  height: 100vh;
+
+  & .resumeSection {
+    width: 650px;
+    // height: 850px;
+    background: linear-gradient(#e66465, #9198e5);
+  }
+  & .leftSection {
+    // width: 296px;
+    // height: 830px;
+    background-color: rgba(240, 248, 255, 0.473);
+    border-radius: 10px;
+    & .nameSection {
+      //   width: 260px;
+      height: 116px;
+      display: flex;
+      width: 100%;
+
+      & .avatar {
+        width: 116px;
+        height: 116px;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: 10px;
+      }
+      & .name {
+        padding: 10px;
+      }
+    }
+    & .contactInfo {
+      width: 100%;
+      //   height: 160px;
+    }
+    & .contactDetail {
+      background: rgba(255, 255, 255, 0.55);
+      height: 38px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+    & .IndustryKnowledge {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.55);
+      border-radius: 5px;
+    }
+    & .SelfEvaluation {
+      width: 100%;
+      height: 200px;
+      background-color: rgba(255, 255, 255, 0.55);
+      border-radius: 5px;
+    }
+    & .SocialMedia {
+      & .socialText {
+        width: fit-content;
+        background-color: rgba(255, 255, 255, 0.55);
+        border-radius: 5px;
+      }
+      & .SocialMediaIcon {
+        // display: flex;
+        width: 100%;
+        & .mediaIcon {
+          width: 40px;
+          height: 40px;
+          margin: auto;
+        }
+      }
+    }
+  }
+  & .rightSection {
+    // width: 296px;
+    // height: 830px;
+    background-color: aliceblue;
+    border-radius: 10px;
+  }
+}
