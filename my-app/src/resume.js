@@ -11,53 +11,111 @@ import Facebook from './IMG/Facebook - Negative.svg'
 import Github from './IMG/Github - Negative.svg'
 import Instagram from './IMG/Instagram - Negative.svg'
 import LinkedIn from './IMG/LinkedIn - Negative.svg'
+import ReactIcon from './IMG/React.svg'
+
 import * as echarts from 'echarts'
 import { Icon } from '@iconify/react'
 function Resume() {
   const chart = useRef()
-  useEffect(() => {
-    const myChart = echarts.init(chart.current)
-    const option = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          // Use axis to trigger tooltip
-          type: 'shadow', // 'shadow' as default; can also be 'line' or 'shadow'
+  const skills = useRef()
+
+  const chartOption = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        // Use axis to trigger tooltip
+        type: 'shadow', // 'shadow' as default; can also be 'line' or 'shadow'
+      },
+    },
+    legend: {
+      top: '5%',
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true,
+    },
+    xAxis: {
+      type: 'value',
+    },
+    yAxis: {
+      type: 'category',
+      data: ['團隊合作', '隨機應變', '創意發想'],
+    },
+    textStyle: {
+      fontSize: 20,
+    },
+    series: [
+      {
+        name: '評分',
+        type: 'bar',
+        stack: 'total',
+        label: {
+          show: true,
         },
+        emphasis: {
+          focus: 'series',
+        },
+        data: [7, 9, 10],
       },
-      legend: {},
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true,
-      },
-      xAxis: {
-        type: 'value',
-      },
-      yAxis: {
-        type: 'category',
-        data: ['團隊合作', '隨機應變', '創意發想'],
-      },
-      textStyle: {
-        fontSize: 20,
-      },
-      series: [
-        {
-          name: '評分',
-          type: 'bar',
-          stack: 'total',
+    ],
+  }
+  //   圓餅圖
+  const skillsOption = {
+    tooltip: {
+      trigger: 'item',
+    },
+    legend: {
+      //   top: '5%',
+      //   left: 'center',
+      show: false,
+    },
+    textStyle: {
+      fontSize: 12,
+    },
+    series: [
+      {
+        name: 'Access From',
+        type: 'pie',
+        radius: ['40%', '70%'],
+        avoidLabelOverlap: false,
+        itemStyle: {
+          borderRadius: 10,
+          borderColor: '#fff',
+          borderWidth: 2,
+        },
+        label: {
+          show: false,
+          position: 'center',
+        },
+        emphasis: {
           label: {
             show: true,
+            fontSize: '20',
+            fontWeight: 'bold',
           },
-          emphasis: {
-            focus: 'series',
-          },
-          data: [7, 9, 10],
         },
-      ],
-    }
-    myChart.setOption(option)
+        labelLine: {
+          show: false,
+        },
+        top: '-5%',
+
+        data: [
+          { value: 5, name: 'React' },
+          { value: 5, name: 'JavaScript' },
+          { value: 5, name: 'Node.js' },
+          { value: 5, name: 'CSS' },
+          { value: 5, name: 'HTML5' },
+        ],
+      },
+    ],
+  }
+  useEffect(() => {
+    const myChart = echarts.init(chart.current)
+    myChart.setOption(chartOption)
+    const mySkills = echarts.init(skills.current)
+    mySkills.setOption(skillsOption)
   })
 
   return (
@@ -218,7 +276,87 @@ function Resume() {
               </div>
             </div>
           </div>
-          <div className={classnames(styles.rightSection, 'col-span-1')}></div>
+          {/* 右邊區 */}
+          <div className={classnames(styles.rightSection, 'col-span-1', 'p-2')}>
+            <div>
+              <div className={classnames('flex')}>
+                <p className={classnames(styles.experienceSection1)}>
+                  EXPERIENCE
+                </p>
+                <div className="w-1/2 flex items-center">
+                  <div className={classnames(styles.experienceLine)}></div>
+                </div>
+              </div>
+              <div>
+                <p>Blue Moon Consultency Studio</p>
+                <p className={classnames('text-xs')}>Seniour UI designer</p>
+                <p className={classnames('text-xs')}>
+                  Aug 2020 - Present - 1 year, New York
+                </p>
+                <p className={classnames('text-xs')}>
+                  Product team to prototype, design and deliver the UI and UX
+                  experience with a lean design process: research, design, test,
+                  and iterate.
+                </p>
+              </div>
+              <div>
+                <p>Blue Moon Consultency Studio</p>
+                <p className={classnames('text-xs')}>Seniour UI designer</p>
+                <p className={classnames('text-xs')}>
+                  Aug 2020 - Present - 1 year, New York
+                </p>
+                <p className={classnames('text-xs')}>
+                  Product team to prototype, design and deliver the UI and UX
+                  experience with a lean design process: research, design, test,
+                  and iterate.
+                </p>
+              </div>
+            </div>
+            {/* education */}
+            <div>
+              <div className={classnames('flex')}>
+                <p className={classnames(styles.experienceSection1)}>
+                  EDUCATION
+                </p>
+                <div className="w-1/2 flex items-center">
+                  <div className={classnames(styles.experienceLine)}></div>
+                </div>
+              </div>
+              <div>
+                <p>Blue Moon Consultency Studio</p>
+                <p className={classnames('text-xs')}>Seniour UI designer</p>
+                <p className={classnames('text-xs')}>
+                  Aug 2020 - Present - 1 year, New York
+                </p>
+              </div>
+              <div>
+                <p>Blue Moon Consultency Studio</p>
+                <p className={classnames('text-xs')}>Seniour UI designer</p>
+                <p className={classnames('text-xs')}>
+                  Aug 2020 - Present - 1 year, New York
+                </p>
+              </div>
+            </div>
+            {/* Skills */}
+            <div className="relative">
+              <div className={classnames('flex')}>
+                <p className={classnames(styles.experienceSection1)}>SKILLS</p>
+                <div className="w-1/2 flex items-center">
+                  <div className={classnames(styles.experienceLine)}></div>
+                </div>
+              </div>
+              <div
+                className={classnames(styles.SelfSkillsEvaluation)}
+                ref={skills}
+              ></div>
+              <img
+                src={ReactIcon}
+                alt=""
+                className={classnames('absolute', 'top-8', styles.reactIcon)}
+              />
+            </div>
+            <div></div>
+          </div>
         </div>
       </div>
     </>
