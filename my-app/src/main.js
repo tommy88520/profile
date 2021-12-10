@@ -94,46 +94,51 @@ function Main() {
   function nabShrink() {
     // let userScrollTOP06 = window.innerHeight * 0.7 + window.scrollY //使用者真正觸發的位置，頁面的八成
     // window.location.hash = ''
+    if (
+      !!encourageOffsetTop.current &&
+      !!hereOffsetTop.current &&
+      !!myActivityOffsetTop.current
+    ) {
+      const encourageSection = encourageOffsetTop.current.offsetTop
+      const hereSection = hereOffsetTop.current.offsetTop
+      const myActivitySection2 = myActivityOffsetTop.current.offsetTop
 
-    const encourageSection = encourageOffsetTop.current.offsetTop
-    const hereSection = hereOffsetTop.current.offsetTop
-    const myActivitySection2 = myActivityOffsetTop.current.offsetTop
+      if (window.pageYOffset >= 400) {
+        setNavBar(true)
+        setSkillshrink(true)
+      } else {
+        // setCollapse(true)
+        setNavBar(false)
+        setSkillshrink(false)
+        setCollapse(true)
+      }
+      // encourageSection
+      if (window.pageYOffset >= encourageSection - 500) {
+        // console.log(123)
+        setSkillshrink(false)
+      }
+      // hereSection
+      if (window.pageYOffset >= hereSection - 300) {
+        setHereShrink(true)
+      } else {
+        setHereShrink(false)
+      }
+      // myActivity
+      if (window.pageYOffset >= myActivitySection2 - 400) {
+        setMyActivityShrink(true)
+        // console.log('123')
+        // setMyActivityChangeColor(true)
+      } else {
+        setMyActivityShrink(false)
+        setMyActivityChangeColor(false)
+      }
+      if (window.pageYOffset >= myActivitySection2 - 50) {
+        // setMyActivityShrink(true)
 
-    if (window.pageYOffset >= 400) {
-      setNavBar(true)
-      setSkillshrink(true)
-    } else {
-      // setCollapse(true)
-      setNavBar(false)
-      setSkillshrink(false)
-      setCollapse(true)
+        setMyActivityChangeColor(true)
+      }
+      // console.log(window.pageYOffset)
     }
-    // encourageSection
-    if (window.pageYOffset >= encourageSection - 500) {
-      // console.log(123)
-      setSkillshrink(false)
-    }
-    // hereSection
-    if (window.pageYOffset >= hereSection - 300) {
-      setHereShrink(true)
-    } else {
-      setHereShrink(false)
-    }
-    // myActivity
-    if (window.pageYOffset >= myActivitySection2 - 400) {
-      setMyActivityShrink(true)
-      // console.log('123')
-      // setMyActivityChangeColor(true)
-    } else {
-      setMyActivityShrink(false)
-      setMyActivityChangeColor(false)
-    }
-    if (window.pageYOffset >= myActivitySection2 - 50) {
-      // setMyActivityShrink(true)
-
-      setMyActivityChangeColor(true)
-    }
-    // console.log(window.pageYOffset)
   }
   return (
     <>
