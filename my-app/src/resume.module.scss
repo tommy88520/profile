@@ -1,11 +1,14 @@
 .background {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
+  padding: 20px 0px;
 
   & .resumeSection {
     width: 650px;
     // height: 850px;
     background: linear-gradient(#f6c327, #19222e);
+    border-radius: 10px;
+    overflow: hidden;
   }
   & .leftSection {
     // width: 296px;

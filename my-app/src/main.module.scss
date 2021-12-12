@@ -285,6 +285,11 @@
     border-radius: 0px 500px 500px 0px;
     // outline: 10px solid #19222e;
   }
+  & .hereText {
+    width: 500px;
+    color: #ffffff;
+    font-size: 20px;
+  }
 }
 .vespa {
   width: 100%;
@@ -324,6 +329,11 @@
   & .vespaRight {
     height: 100%;
     background-color: #f0592b;
+    & .vespaText {
+      width: 500px;
+      color: #ffffff;
+      font-size: 20px;
+    }
   }
 }
 .monterose {
@@ -364,6 +374,11 @@
   & .monteroseRight {
     height: 100%;
     background-color: #1b6c51;
+    & .monteroseText {
+      width: 500px;
+      color: #ffffff;
+      font-size: 20px;
+    }
   }
 }
 .myActivitySection {
@@ -467,6 +482,10 @@
         height: 110px;
         line-height: 110px;
       }
+      & .schoolIcon {
+        width: 50px;
+        height: 50px;
+      }
 
       // 懸念  一個一個跳出來
     }
@@ -494,6 +513,10 @@
       height: 110px;
       line-height: 110px;
       // transform: translateX(-20px);
+    }
+    & .schoolIcon {
+      width: 50px;
+      height: 50px;
     }
   }
   & .contactSeciton {

@@ -19,13 +19,16 @@ import Node from './IMG/skillIcon/Node.svg'
 import Tailwind from './IMG/skillIcon/Tailwind.svg'
 import MySQLIcon from './IMG/skillIcon/MySQL.svg'
 import PHPIcon from './IMG/skillIcon/PHP.svg'
+import Snow from './snow'
 
 import * as echarts from 'echarts'
 import { Icon } from '@iconify/react'
 function Resume() {
   const chart = useRef()
   const skills = useRef()
-
+  const totalHeight = useRef()
+  // const resumeHeight = totalHeight.current.offsetHeight
+  const [resumeHeight, setResumeHeight] = useState('')
   const chartOption = {
     tooltip: {
       trigger: 'axis',
@@ -124,11 +127,18 @@ function Resume() {
     myChart.setOption(chartOption)
     const mySkills = echarts.init(skills.current)
     mySkills.setOption(skillsOption)
+    if (!!totalHeight) {
+      setResumeHeight(totalHeight.current.offsetHeight)
+    }
   })
 
   return (
     <>
-      <div className={classnames(styles.background)}>
+      <Snow snowHeight={resumeHeight} />
+      <div
+        className={classnames(styles.background, 'flex', 'justify-center')}
+        ref={totalHeight}
+      >
         <div
           className={classnames(
             styles.resumeSection,

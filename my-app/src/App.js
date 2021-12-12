@@ -1,17 +1,20 @@
 import { HashRouter, Route, Switch } from 'react-router-dom'
+
 import Main from './main'
 import Resume from './resume'
 import AnimatedCursor from 'react-animated-cursor'
-
+import React, { useState } from 'react'
 function App() {
-  // const [windowLocation, setWindowLocation] = useState('')
+  const [snowOpen, setSnowOpen] = useState(false)
   return (
     <HashRouter>
       <Switch>
         <Route exact path="/resume">
           <Resume />
         </Route>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/">
+          <Main setSnowOpen={setSnowOpen} snowOpen={snowOpen} />
+        </Route>
       </Switch>
       <div className="Cursor">
         <AnimatedCursor
