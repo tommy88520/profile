@@ -62,8 +62,22 @@ function Main(props) {
       })
     }
   }
+
   useEffect(() => {
-    window.addEventListener('scroll', nabShrink)
+    window.addEventListener('scroll', navShrink)
+    const test = window.pageYOffset
+    // if (test >= 400) {
+    //   setNavBar(true)
+    //   setSkillshrink(true)
+    //   console.log(123)
+    // } else {
+    //   // setCollapse(true)
+    //   setNavBar(false)
+    //   setSkillshrink(false)
+    //   setCollapse(true)
+    // }
+    console.log(test)
+
     VanillaTilt.init(card1.current, {
       max: 25,
       speed: 400,
@@ -100,13 +114,14 @@ function Main(props) {
       glare: true,
       'max-glare': 0.8,
     })
+    setMainHeight(windowHeight.current.offsetHeight)
 
     // console.log(windowHeight.current.offsetHeight)
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [collapse, snowOpen])
+  }, [collapse, snowOpen, mainHeight])
 
-  function nabShrink() {
+  function navShrink() {
     // let userScrollTOP06 = window.innerHeight * 0.7 + window.scrollY //使用者真正觸發的位置，頁面的八成
     // window.location.hash = ''
     if (
@@ -118,8 +133,7 @@ function Main(props) {
       const encourageSection = encourageOffsetTop.current.offsetTop
       const hereSection = hereOffsetTop.current.offsetTop
       const myActivitySection2 = myActivityOffsetTop.current.offsetTop
-      setMainHeight(windowHeight.current.offsetHeight)
-
+      // setMainHeight(windowHeight.current.offsetHeight)
       if (window.pageYOffset >= 400) {
         setNavBar(true)
         setSkillshrink(true)
@@ -181,7 +195,13 @@ function Main(props) {
             >
               HYM
             </div>
-            <div className={classnames(styles.nav, snowOpen && 'text-white')}>
+            <div
+              className={classnames(
+                styles.nav,
+                snowOpen && 'text-white',
+                'px-2'
+              )}
+            >
               <button
                 className={classnames(navBar ? styles.hamburger : 'd-none')}
                 onClick={() => {
@@ -191,7 +211,7 @@ function Main(props) {
                 <div
                   className={classnames(
                     'bg-primary',
-                    'w-full',
+                    // 'w-full',
                     'h-2',
                     collapse ? styles.lineNotActive : styles.lineActive1
                   )}
@@ -199,7 +219,7 @@ function Main(props) {
                 <div
                   className={classnames(
                     'bg-primary',
-                    'w-full',
+                    // 'w-full',
                     'h-2',
                     collapse ? styles.lineNotActive : styles.lineActive2
                   )}
@@ -207,7 +227,7 @@ function Main(props) {
                 <div
                   className={classnames(
                     'bg-primary',
-                    'w-full',
+                    // 'w-full',
                     'h-2',
                     collapse ? styles.lineNotActive : styles.lineActive3
                   )}

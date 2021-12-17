@@ -133,7 +133,7 @@ function Resume(props) {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [snowOpen])
+  }, [snowOpen, totalHeight, resumeHeight])
 
   return (
     <>
