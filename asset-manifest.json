@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/profile/static/css/main.9ad69a58.chunk.css",
-    "main.js": "/profile/static/js/main.5e6bb3dc.chunk.js",
-    "main.js.map": "/profile/static/js/main.5e6bb3dc.chunk.js.map",
+    "main.css": "/profile/static/css/main.ea013bbc.chunk.css",
+    "main.js": "/profile/static/js/main.7af0c823.chunk.js",
+    "main.js.map": "/profile/static/js/main.7af0c823.chunk.js.map",
     "runtime-main.js": "/profile/static/js/runtime-main.e01d8f59.js",
     "runtime-main.js.map": "/profile/static/js/runtime-main.e01d8f59.js.map",
     "static/js/2.4d94ae7d.chunk.js": "/profile/static/js/2.4d94ae7d.chunk.js",
     "static/js/2.4d94ae7d.chunk.js.map": "/profile/static/js/2.4d94ae7d.chunk.js.map",
     "index.html": "/profile/index.html",
-    "static/css/main.9ad69a58.chunk.css.map": "/profile/static/css/main.9ad69a58.chunk.css.map",
+    "static/css/main.ea013bbc.chunk.css.map": "/profile/static/css/main.ea013bbc.chunk.css.map",
     "static/js/2.4d94ae7d.chunk.js.LICENSE.txt": "/profile/static/js/2.4d94ae7d.chunk.js.LICENSE.txt",
     "static/media/main.module.scss": "/profile/static/media/萬芳海報.3861cd71.png",
     "static/media/Avatar2.0dd8a5ab.JPG": "/profile/static/media/Avatar2.0dd8a5ab.JPG",
@@ -41,7 +41,7 @@
   "entrypoints": [
     "static/js/runtime-main.e01d8f59.js",
     "static/js/2.4d94ae7d.chunk.js",
-    "static/css/main.9ad69a58.chunk.css",
-    "static/js/main.5e6bb3dc.chunk.js"
+    "static/css/main.ea013bbc.chunk.css",
+    "static/js/main.7af0c823.chunk.js"
   ]
 }
