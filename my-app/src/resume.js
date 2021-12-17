@@ -23,7 +23,8 @@ import Snow from './snow'
 
 import * as echarts from 'echarts'
 import { Icon } from '@iconify/react'
-function Resume() {
+function Resume(props) {
+  const { snowOpen, setSnowOpen } = props
   const chart = useRef()
   const skills = useRef()
   const totalHeight = useRef()
@@ -114,9 +115,9 @@ function Resume() {
 
         data: [
           { value: 10, name: 'JavaScript' },
+          { value: 10, name: 'Bootstrap' },
+          { value: 10, name: 'Tailwind' },
           { value: 10, name: 'Node.js' },
-          { value: 10, name: 'CSS' },
-          { value: 10, name: 'HTML5' },
           { value: 10, name: 'React' },
         ],
       },
@@ -130,11 +131,13 @@ function Resume() {
     if (!!totalHeight) {
       setResumeHeight(totalHeight.current.offsetHeight)
     }
-  })
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [snowOpen])
 
   return (
     <>
-      <Snow snowHeight={resumeHeight} />
+      {snowOpen && <Snow snowHeight={resumeHeight} />}
       <div
         className={classnames(styles.background, 'flex', 'justify-center')}
         ref={totalHeight}

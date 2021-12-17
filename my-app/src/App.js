@@ -10,7 +10,7 @@ function App() {
     <HashRouter>
       <Switch>
         <Route exact path="/resume">
-          <Resume />
+          <Resume setSnowOpen={setSnowOpen} snowOpen={snowOpen} />
         </Route>
         <Route exact path="/">
           <Main setSnowOpen={setSnowOpen} snowOpen={snowOpen} />
