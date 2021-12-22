@@ -9,6 +9,10 @@ module.exports = {
       },
       fontFamily: { body: 'Roboto+Condensed' },
     },
+    // screens: {
+    //   xs: '340px',
+    //   // phone
+    // },
   },
   variants: {
     extend: {},

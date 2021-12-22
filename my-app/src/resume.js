@@ -123,15 +123,20 @@ function Resume(props) {
       },
     ],
   }
+
+  function text() {
+    window.location.reload()
+  }
   useEffect(() => {
     const myChart = echarts.init(chart.current)
     myChart.setOption(chartOption)
     const mySkills = echarts.init(skills.current)
     mySkills.setOption(skillsOption)
+    // window.addEventListener('resize', mySkills)
     if (!!totalHeight) {
       setResumeHeight(totalHeight.current.offsetHeight)
     }
-
+    window.addEventListener('resize', text)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [snowOpen, totalHeight, resumeHeight])
 
@@ -146,7 +151,8 @@ function Resume(props) {
           className={classnames(
             styles.resumeSection,
             'grid',
-            'grid-cols-2',
+            'sm:grid-cols-2',
+            'grid-cols-1',
             'gap-3',
             'p-2'
             // 'justify-center'
