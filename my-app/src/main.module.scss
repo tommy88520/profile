@@ -52,6 +52,7 @@
         font-size: 20px;
         transition: 0.5s;
       }
+
       & .backgroundButton {
         width: 80px;
         height: 42px;
@@ -99,6 +100,9 @@
   top: 50px;
   right: 60px;
   border-radius: 10px;
+  @media (max-width: 800px) {
+    top: 10px;
+  }
   & .logo {
     min-width: 58px;
     height: 58px;
@@ -233,15 +237,21 @@
 .myImg {
   height: 100vh;
   padding-top: 106px;
+  // position: fixed;
+  width: 100%;
+  z-index: -10;
+  // margin-bottom: 100vh;
+  // margin-bottom: 100px;
   & .mainImg {
     background: url(./IMG/IMG_4783.JPG) center center / cover;
-    border-radius: 100px;
+    border-radius: 100px 0px 0px 100px;
     overflow: hidden;
   }
   & .info {
     position: absolute;
     top: 50%;
     transform: translateY(-50%) translateX(130px);
+    // z-index: 2;
     @media (max-width: 1024px) {
       transform: translateY(-50%) translateX(100px);
     }
@@ -256,8 +266,10 @@
     & .btn {
       padding: 15px 20px;
       border-radius: 100px;
-      background-color: #19222e;
-      color: #fff;
+      // background-color: #19222e;
+      // color: #fff;
+      position: absolute;
+      z-index: 10;
     }
   }
 }
@@ -265,6 +277,8 @@
   width: 100%;
   // height: 100vh;
   border-radius: 100px;
+  // padding-top: 100vh;
+  // margin-top: 50px;
 
   & .skillsInside {
     width: 80%;
@@ -273,6 +287,7 @@
     display: flex;
     justify-content: center;
     transition: 0.5s;
+    // height: 100vh;
     @media (max-width: 1024px) {
       padding: 20px 0px;
     }
@@ -324,7 +339,7 @@
 .Here {
   //   width: 100%;
   // height: 100vh;
-  border-radius: 100px;
+  border-radius: 100px 100px 0px 0px;
   overflow: hidden;
   //   background: url('./IMG/IMG_4783.JPG');
   & .HereIn {
@@ -417,7 +432,7 @@
   & .HereCover {
     width: 80%;
     // height: 100vh;
-    border-radius: 100px;
+    border-radius: 100px 100px 0px 0px;
     overflow: hidden;
     transition: 0.5s;
     @media (max-width: 500px) {
@@ -530,7 +545,7 @@
 .vespa {
   width: 100%;
   // height: 100vh;
-  border-radius: 100px;
+  // border-radius: 100px;
   overflow: hidden;
   background: url(./IMG/vespa_w_light.png);
   // background-color: #000;
@@ -618,7 +633,7 @@
 .monterose {
   width: 100%;
   // height: 100vh;
-  border-radius: 100px;
+  // border-radius: 100px;
   overflow: hidden;
   background: url(./IMG/monterose_w_light.png);
   background-attachment: fixed;
@@ -708,7 +723,7 @@
   width: 100%;
   overflow: hidden;
   display: flex;
-  border-radius: 100px;
+  // border-radius: 100px;
 }
 .activityBg {
   position: absolute;
@@ -739,10 +754,11 @@
   background-color: #fff;
   // z-index: 2;
   transform: translateX(100vw);
-  transition: 1s;
+  transition: 2s;
 }
 .activityBg2Active {
   transform: translateX(0vw);
+  transition: 2s;
 }
 .MyActivity {
   width: 100%;
@@ -752,7 +768,7 @@
   letter-spacing: 10px;
   font-weight: bold;
   transform: translateX(1500px);
-  transition: all 1s;
+  transition: all 2s;
   background-color: #19222e;
   background-clip: text;
   -webkit-background-clip: text;
@@ -807,7 +823,7 @@
   // background-color: #19222e;
   padding: 50px 0px;
   // max-width: 1280px;
-  border-radius: 100px 100px 0px 0px;
+  // border-radius: 100px 100px 0px 0px;
 
   & .activityCard {
     width: 310px;
@@ -817,6 +833,7 @@
     // border-radius: 50px;
     transition: 0.5s;
     border: 1px solid #fff;
+    box-shadow: 0px 0px 10px 5px#ccc;
     @media (max-width: 400px) {
       width: 250px;
       height: 330px;
@@ -920,6 +937,13 @@
   & .partersItems {
     width: 70%;
     max-width: 1280px;
+    @media (max-width: 1280px) {
+      width: 85%;
+    }
+    @media (max-width: 1024px) {
+      width: 70%;
+    }
+
     @media (max-width: 768px) {
       width: 80%;
     }
@@ -1055,12 +1079,12 @@
     }
   }
   & .contactSeciton {
-    width: 80%;
+    width: 70%;
     max-width: 1280px;
     margin-top: 50px;
-    // height: 500px;
+    height: 500px;
     @media (max-width: 1280px) {
-      width: 90%;
+      width: 85%;
     }
     @media (max-width: 1024px) {
       width: 70%;
@@ -1129,4 +1153,7 @@
       }
     }
   }
+}
+.fixedEffect {
+  padding-top: 100vh;
 }

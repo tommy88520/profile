@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './resume.module.scss'
 import classnames from 'classnames'
 import Avatar from './IMG/Avatar2.JPG'
@@ -20,6 +20,9 @@ import Tailwind from './IMG/skillIcon/Tailwind.svg'
 import MySQLIcon from './IMG/skillIcon/MySQL.svg'
 import PHPIcon from './IMG/skillIcon/PHP.svg'
 import Snow from './snow'
+import Sun from './IMG/sun.svg'
+import Moon from './IMG/moon.svg'
+import Airplane from './Airplane'
 
 import * as echarts from 'echarts'
 import { Icon } from '@iconify/react'
@@ -28,8 +31,28 @@ function Resume(props) {
   const chart = useRef()
   const skills = useRef()
   const totalHeight = useRef()
-  // const resumeHeight = totalHeight.current.offsetHeight
+  const navbarHeight = useRef() // const resumeHeight = totalHeight.current.offsetHeight
+  const [navBar, setNavBar] = useState(true)
   const [resumeHeight, setResumeHeight] = useState('')
+  const [collapse, setCollapse] = useState(true)
+
+  const facebookClick = () => {
+    window.open('https://www.facebook.com/tommy8852024')
+  }
+  const instagramClick = () => {
+    window.open('https://www.instagram.com/tommy88520/')
+  }
+  const linkedinClick = () => {
+    window.open('https://www.linkedin.com/in/yan-ming-huang-b4355221a/')
+  }
+  const githubClick = () => {
+    window.open('https://github.com/tommy88520')
+  }
+  const resumeClick = () => {
+    window.open(
+      'https://drive.google.com/file/d/1gco6XJpXHnhPvlgLNT2P7VX41LSoI3Oc/view?usp=sharing'
+    )
+  }
   const chartOption = {
     tooltip: {
       trigger: 'axis',
@@ -124,8 +147,14 @@ function Resume(props) {
     ],
   }
 
-  function text() {
+  function resizeChart() {
     window.location.reload()
+    if (window.innerWidth < 800) {
+      // console.log(123)
+      setNavBar(true)
+    } else {
+      setNavBar(false)
+    }
   }
   useEffect(() => {
     const myChart = echarts.init(chart.current)
@@ -133,18 +162,154 @@ function Resume(props) {
     const mySkills = echarts.init(skills.current)
     mySkills.setOption(skillsOption)
     // window.addEventListener('resize', mySkills)
-    if (!!totalHeight) {
-      setResumeHeight(totalHeight.current.offsetHeight)
+    if (!!totalHeight && !!navbarHeight) {
+      const total = totalHeight.current.offsetHeight
+      // + navbarHeight.current.offsetHeight
+      // console.log(total)
+      setResumeHeight(total)
     }
-    window.addEventListener('resize', text)
+
+    window.addEventListener('resize', resizeChart)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [snowOpen, totalHeight, resumeHeight])
 
+  useEffect(() => {
+    const snowState = JSON.parse(localStorage.getItem('snowOpen'))
+    setSnowOpen(!snowState)
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
-      {snowOpen && <Snow snowHeight={resumeHeight} />}
+      {snowOpen ? (
+        <Snow snowHeight={resumeHeight} />
+      ) : (
+        <Airplane snowHeight={resumeHeight} />
+      )}
+
+      <nav className={classnames(styles.navHeaderShrink)} ref={navbarHeight}>
+        <div
+          className={classnames(
+            'container',
+            'flex',
+            'justify-between',
+            'text-primary',
+            styles.basicNav
+          )}
+        >
+          <Link to={'/'}>
+            <div
+              className={classnames(
+                styles.logo,
+                snowOpen && styles.darkLogo,
+                'font-semibold'
+              )}
+            >
+              HYM
+            </div>
+          </Link>
+          <div
+            className={classnames(styles.nav, snowOpen && 'text-white', 'px-2')}
+          >
+            <button
+              className={classnames(navBar ? styles.hamburger : 'd-none')}
+              onClick={() => {
+                setCollapse(!collapse)
+              }}
+            >
+              <div
+                className={classnames(
+                  'bg-primary',
+                  // 'w-full',
+                  'h-2',
+                  collapse ? styles.lineNotActive : styles.lineActive1
+                )}
+              ></div>
+              <div
+                className={classnames(
+                  'bg-primary',
+                  // 'w-full',
+                  'h-2',
+                  collapse ? styles.lineNotActive : styles.lineActive2
+                )}
+              ></div>
+              <div
+                className={classnames(
+                  'bg-primary',
+                  // 'w-full',
+                  'h-2',
+                  collapse ? styles.lineNotActive : styles.lineActive3
+                )}
+              ></div>
+            </button>
+            <button
+              className={classnames(collapse ? styles.navLink : styles.show)}
+              onClick={resumeClick}
+            >
+              <span className={classnames(styles.navSkill)}>RESUME</span>
+            </button>
+
+            <div
+              className={classnames(collapse ? styles.navLink : styles.show)}
+            >
+              <Link to={'/'}>
+                <span className={classnames(styles.navSkill)}>Home</span>
+              </Link>
+            </div>
+            <div
+              className={classnames(collapse ? styles.navLink : styles.show)}
+            >
+              <div
+                className={classnames(
+                  'h-full',
+                  'flex',
+                  'items-center',
+                  'w-full'
+                )}
+              >
+                <div
+                  className={classnames(
+                    styles.backgroundButton,
+                    'flex',
+                    'justify-center',
+                    'items-center',
+                    snowOpen ? 'bg-white' : 'bg-black'
+                  )}
+                  onClick={() => {
+                    setSnowOpen(!snowOpen)
+                    localStorage.setItem('snowOpen', snowOpen)
+                  }}
+                >
+                  <div
+                    className={classnames(
+                      styles.sun,
+                      snowOpen && styles.sunActive
+                    )}
+                  >
+                    <img src={Sun} alt="" />
+                  </div>
+                  <div
+                    className={classnames(
+                      styles.moon,
+                      snowOpen && styles.moonActive
+                    )}
+                  >
+                    <img src={Moon} alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
       <div
-        className={classnames(styles.background, 'flex', 'justify-center')}
+        className={classnames(
+          styles.background,
+          'flex',
+          'justify-center'
+          // navBar && 'pt-20'
+        )}
         ref={totalHeight}
       >
         <div
@@ -154,7 +319,8 @@ function Resume(props) {
             'sm:grid-cols-2',
             'grid-cols-1',
             'gap-3',
-            'p-2'
+            'p-2',
+            snowOpen && styles.snowBackground
             // 'justify-center'
           )}
         >
@@ -260,15 +426,15 @@ function Resume(props) {
               </div>
             </div>
             {/* <div className="p-2">
-              <div className={classnames(styles.IndustryKnowledge, 'px-5')}>
-                <p>Industry Knowledge</p>
-                <ul className={classnames('list-disc')}>
-                  <li>User Interface</li>
-                  <li>User experience</li>
-                  <li>撰寫企劃</li>
-                </ul>
-              </div>
-            </div> */}
+                <div className={classnames(styles.IndustryKnowledge, 'px-5')}>
+                  <p>Industry Knowledge</p>
+                  <ul className={classnames('list-disc')}>
+                    <li>User Interface</li>
+                    <li>User experience</li>
+                    <li>撰寫企劃</li>
+                  </ul>
+                </div>
+              </div> */}
             {/* 自評區 */}
             <div className="p-2">
               <div
@@ -290,26 +456,38 @@ function Resume(props) {
                     'p-2'
                   )}
                 >
-                  <img
-                    src={Facebook}
-                    alt=""
-                    className={classnames(styles.mediaIcon)}
-                  />
-                  <img
-                    src={Github}
-                    alt=""
-                    className={classnames(styles.mediaIcon)}
-                  />
-                  <img
-                    src={Instagram}
-                    alt=""
-                    className={classnames(styles.mediaIcon)}
-                  />
-                  <img
-                    src={LinkedIn}
-                    alt=""
-                    className={classnames(styles.mediaIcon)}
-                  />
+                  <button>
+                    <img
+                      src={Facebook}
+                      alt=""
+                      className={classnames(styles.mediaIcon)}
+                      onClick={facebookClick}
+                    />
+                  </button>
+                  <button>
+                    <img
+                      src={Github}
+                      alt=""
+                      className={classnames(styles.mediaIcon)}
+                      onClick={githubClick}
+                    />
+                  </button>
+                  <button>
+                    <img
+                      src={Instagram}
+                      alt=""
+                      className={classnames(styles.mediaIcon)}
+                      onClick={instagramClick}
+                    />
+                  </button>
+                  <button>
+                    <img
+                      src={LinkedIn}
+                      alt=""
+                      className={classnames(styles.mediaIcon)}
+                      onClick={linkedinClick}
+                    />
+                  </button>
                 </div>
               </div>
             </div>
@@ -334,7 +512,6 @@ function Resume(props) {
                     />
                     <p className="text-xs text-center">Basketball</p>
                   </div>
-
                   <div>
                     <Icon
                       icon="healthicons:gym"
@@ -373,7 +550,6 @@ function Resume(props) {
               </div>
               <div className={classnames('py-1')}>
                 <p>資策會前端工程師班</p>
-
                 <p className={classnames('text-xs')}>2021/6/17 - 2021/11/20</p>
                 <p className={classnames('text-sm', 'pt-1')}>
                   在專案中負責撰寫會員中心的部分、包含會員資料庫建置、
@@ -412,7 +588,6 @@ function Resume(props) {
                 </p>
               </div>
             </div>
-
             {/* Skills */}
             <div className="relative">
               <div className={classnames('flex', 'my-2')}>

@@ -1,0 +1,90 @@
+.background {
+  margin: 0;
+  padding: 0;
+  background: #93d9d8;
+  //   height: 100vh;
+  width: 100%;
+  position: absolute;
+  background: url('./IMG/IMG_4055.jpeg') no-repeat;
+  background-size: cover;
+}
+.clouds {
+  background-image: url('https://pngimg.com/uploads/cloud/cloud_PNG24.png');
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  height: 100px;
+  background-size: contain;
+  animation: moving 50s linear infinite;
+}
+.clouds2 {
+  background-image: url('https://pngimg.com/uploads/cloud/cloud_PNG24.png');
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  height: 300px;
+  background-size: contain;
+  animation: moving 40s linear infinite;
+  transform: translateY(-140px);
+}
+.clouds3 {
+  background-image: url('https://pngimg.com/uploads/cloud/cloud_PNG24.png');
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  height: 150px;
+  background-size: contain;
+  animation: moving 30s linear infinite;
+  // transform: translateY(-140px);
+}
+.airplane {
+  position: absolute;
+  width: 100px;
+  right: 10%;
+  top: 50%;
+  animation: up 2s ease-in-out infinite alternate, rotate 4s ease-out infinite;
+}
+.trees {
+  position: absolute;
+  background-image: url('./IMG/Tree.png');
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  height: 124px;
+  width: 100%;
+  bottom: 0;
+  background-size: contain;
+  z-index: -10;
+  animation: moving 30s linear infinite;
+}
+@keyframes moving {
+  to {
+    background-position: -110% 0;
+  }
+}
+@keyframes up {
+  to {
+    margin-top: -100px;
+  }
+}
+@keyframes rotate {
+  50% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+}
+
+.cls1,
+.cls2 {
+  fill: #fff;
+}
+
+.cls1 {
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+.text {
+  position: absolute;
+  right: 8%;
+  top: 58%;
+  animation: up 2s ease-in-out infinite alternate, rotate 4s ease-out infinite;
+  color: white;
+}

@@ -2,7 +2,6 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 
 import Main from './main'
 import Resume from './resume'
-import Start from './start'
 import AnimatedCursor from 'react-animated-cursor'
 import React, { useState } from 'react'
 function App() {
@@ -10,9 +9,9 @@ function App() {
   return (
     <HashRouter>
       <Switch>
-        <Route exact path="/start">
+        {/* <Route exact path="/start">
           <Start />
-        </Route>
+        </Route> */}
         <Route exact path="/resume">
           <Resume setSnowOpen={setSnowOpen} snowOpen={snowOpen} />
         </Route>
