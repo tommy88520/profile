@@ -857,7 +857,9 @@ function Main(props) {
                 'col-span-1',
                 'flex',
                 'justify-center',
-                'items-center'
+                'items-center',
+                'md:pb-0',
+                'pb-5'
               )}
             >
               <div
