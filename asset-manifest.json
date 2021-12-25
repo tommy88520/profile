@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/profile/static/css/main.5bf140f5.chunk.css",
-    "main.js": "/profile/static/js/main.460d9140.chunk.js",
-    "main.js.map": "/profile/static/js/main.460d9140.chunk.js.map",
+    "main.css": "/profile/static/css/main.941b79c1.chunk.css",
+    "main.js": "/profile/static/js/main.883b96d5.chunk.js",
+    "main.js.map": "/profile/static/js/main.883b96d5.chunk.js.map",
     "runtime-main.js": "/profile/static/js/runtime-main.e01d8f59.js",
     "runtime-main.js.map": "/profile/static/js/runtime-main.e01d8f59.js.map",
-    "static/js/2.3de15ae4.chunk.js": "/profile/static/js/2.3de15ae4.chunk.js",
-    "static/js/2.3de15ae4.chunk.js.map": "/profile/static/js/2.3de15ae4.chunk.js.map",
+    "static/css/2.96b26686.chunk.css": "/profile/static/css/2.96b26686.chunk.css",
+    "static/js/2.0a43bd8f.chunk.js": "/profile/static/js/2.0a43bd8f.chunk.js",
+    "static/js/2.0a43bd8f.chunk.js.map": "/profile/static/js/2.0a43bd8f.chunk.js.map",
     "index.html": "/profile/index.html",
-    "static/css/main.5bf140f5.chunk.css.map": "/profile/static/css/main.5bf140f5.chunk.css.map",
-    "static/js/2.3de15ae4.chunk.js.LICENSE.txt": "/profile/static/js/2.3de15ae4.chunk.js.LICENSE.txt",
+    "static/css/2.96b26686.chunk.css.map": "/profile/static/css/2.96b26686.chunk.css.map",
+    "static/css/main.941b79c1.chunk.css.map": "/profile/static/css/main.941b79c1.chunk.css.map",
+    "static/js/2.0a43bd8f.chunk.js.LICENSE.txt": "/profile/static/js/2.0a43bd8f.chunk.js.LICENSE.txt",
     "static/media/main.module.scss": "/profile/static/media/萬芳海報.3861cd71.png",
     "static/media/Avatar2.0dd8a5ab.JPG": "/profile/static/media/Avatar2.0dd8a5ab.JPG",
     "static/media/Bethany.187b65b5.png": "/profile/static/media/Bethany.187b65b5.png",
@@ -19,6 +21,8 @@
     "static/media/Figma.ea75148d.svg": "/profile/static/media/Figma.ea75148d.svg",
     "static/media/Github - Negative.d5857a70.svg": "/profile/static/media/Github - Negative.d5857a70.svg",
     "static/media/HERE.700ba413.png": "/profile/static/media/HERE.700ba413.png",
+    "static/media/Airplane.module.scss": "/profile/static/media/IMG_4055.eda5a956.jpeg",
+    "static/media/start.module.scss": "/profile/static/media/IMG_4454.c111a42d.JPG",
     "static/media/Industry.81c57eb6.jpeg": "/profile/static/media/Industry.81c57eb6.jpeg",
     "static/media/Instagram - Negative.6862151e.svg": "/profile/static/media/Instagram - Negative.6862151e.svg",
     "static/media/JavaScript.db933f57.svg": "/profile/static/media/JavaScript.db933f57.svg",
@@ -40,8 +44,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.e01d8f59.js",
-    "static/js/2.3de15ae4.chunk.js",
-    "static/css/main.5bf140f5.chunk.css",
-    "static/js/main.460d9140.chunk.js"
+    "static/css/2.96b26686.chunk.css",
+    "static/js/2.0a43bd8f.chunk.js",
+    "static/css/main.941b79c1.chunk.css",
+    "static/js/main.883b96d5.chunk.js"
   ]
 }
