@@ -29,10 +29,10 @@
   background-image: url('https://pngimg.com/uploads/cloud/cloud_PNG24.png');
   background-position: 0px 0px;
   background-repeat: repeat-x;
-  height: 150px;
+  height: 200px;
   background-size: contain;
   animation: moving 30s linear infinite;
-  // transform: translateY(-140px);
+  transform: translateY(-250px);
 }
 .airplane {
   position: absolute;

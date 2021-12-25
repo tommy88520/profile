@@ -353,19 +353,21 @@ function Resume(props) {
               )}
             >
               <div className={classnames(styles.contactDetail)}>
-                <img src={Mail} alt="" className="p-1 mr-5" />
+                <img src={Mail} alt="" className="p-1 mr-3" />
                 <p className="tracking-wider">tommy8852024@gmail.com</p>
               </div>
               <div className={classnames(styles.contactDetail)}>
-                <img src={Call} alt="" className="p-1 mr-5" />
+                <img src={Call} alt="" className="p-1 mr-3" />
                 <p className="tracking-wider">0926266959</p>
               </div>
               <div className={classnames(styles.contactDetail)}>
-                <img src={Website} alt="" className="p-1 mr-5" />
-                <p className="tracking-wider">wnkcvonmwkc</p>
+                <img src={Website} alt="" className="p-1 mr-3" />
+                <a href="https://tommy88520.github.io/profile/#/">
+                  <p className="tracking-wider">我的作品集</p>
+                </a>
               </div>
               <div className={classnames(styles.contactDetail)}>
-                <img src={Location} alt="" className="p-1  mr-5" />
+                <img src={Location} alt="" className="p-1 mr-3" />
                 <p className="tracking-wider">台北市文山區</p>
               </div>
             </div>
