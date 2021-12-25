@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/profile/static/css/main.c88582cd.chunk.css",
-    "main.js": "/profile/static/js/main.a04b7576.chunk.js",
-    "main.js.map": "/profile/static/js/main.a04b7576.chunk.js.map",
+    "main.css": "/profile/static/css/main.711adf33.chunk.css",
+    "main.js": "/profile/static/js/main.17aa5844.chunk.js",
+    "main.js.map": "/profile/static/js/main.17aa5844.chunk.js.map",
     "runtime-main.js": "/profile/static/js/runtime-main.e01d8f59.js",
     "runtime-main.js.map": "/profile/static/js/runtime-main.e01d8f59.js.map",
     "static/css/2.96b26686.chunk.css": "/profile/static/css/2.96b26686.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.0a43bd8f.chunk.js.map": "/profile/static/js/2.0a43bd8f.chunk.js.map",
     "index.html": "/profile/index.html",
     "static/css/2.96b26686.chunk.css.map": "/profile/static/css/2.96b26686.chunk.css.map",
-    "static/css/main.c88582cd.chunk.css.map": "/profile/static/css/main.c88582cd.chunk.css.map",
+    "static/css/main.711adf33.chunk.css.map": "/profile/static/css/main.711adf33.chunk.css.map",
     "static/js/2.0a43bd8f.chunk.js.LICENSE.txt": "/profile/static/js/2.0a43bd8f.chunk.js.LICENSE.txt",
     "static/media/main.module.scss": "/profile/static/media/萬芳海報.3861cd71.png",
     "static/media/Avatar2.0dd8a5ab.JPG": "/profile/static/media/Avatar2.0dd8a5ab.JPG",
@@ -23,6 +23,7 @@
     "static/media/HERE.700ba413.png": "/profile/static/media/HERE.700ba413.png",
     "static/media/Airplane.module.scss": "/profile/static/media/IMG_4055.eda5a956.jpeg",
     "static/media/start.module.scss": "/profile/static/media/IMG_4454.c111a42d.JPG",
+    "static/media/snow.module.scss": "/profile/static/media/IMG_7158.ef9da00a.jpeg",
     "static/media/Industry.81c57eb6.jpeg": "/profile/static/media/Industry.81c57eb6.jpeg",
     "static/media/Instagram - Negative.6862151e.svg": "/profile/static/media/Instagram - Negative.6862151e.svg",
     "static/media/JavaScript.db933f57.svg": "/profile/static/media/JavaScript.db933f57.svg",
@@ -38,7 +39,7 @@
     "static/media/mdi_call.f52a0562.svg": "/profile/static/media/mdi_call.f52a0562.svg",
     "static/media/mdi_location_on.9e9c9f89.svg": "/profile/static/media/mdi_location_on.9e9c9f89.svg",
     "static/media/mdi_mail.93d395ab.svg": "/profile/static/media/mdi_mail.93d395ab.svg",
-    "static/media/moon.7357e7b8.svg": "/profile/static/media/moon.7357e7b8.svg",
+    "static/media/snow.94bc6f46.svg": "/profile/static/media/snow.94bc6f46.svg",
     "static/media/sun.54cbf554.svg": "/profile/static/media/sun.54cbf554.svg",
     "static/media/website.9dc1d7ae.svg": "/profile/static/media/website.9dc1d7ae.svg"
   },
@@ -46,7 +47,7 @@
     "static/js/runtime-main.e01d8f59.js",
     "static/css/2.96b26686.chunk.css",
     "static/js/2.0a43bd8f.chunk.js",
-    "static/css/main.c88582cd.chunk.css",
-    "static/js/main.a04b7576.chunk.js"
+    "static/css/main.711adf33.chunk.css",
+    "static/js/main.17aa5844.chunk.js"
   ]
 }
