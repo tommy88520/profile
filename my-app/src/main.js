@@ -16,7 +16,9 @@ import NCCU from './IMG/schoolIcon/NCCU.png'
 import DPP from './IMG/schoolIcon/DPP.png'
 import Industry from './IMG/schoolIcon/Industry.jpeg'
 import Sun from './IMG/sun.svg'
-import Moon from './IMG/moon.svg'
+// import Moon from './IMG/moon.svg'
+import SnowIcon from './IMG/snow.svg'
+
 import 'animate.css'
 import VanillaTilt from 'vanilla-tilt'
 import Snow from './snow'
@@ -128,22 +130,26 @@ function Main(props) {
 
     navShrink()
     navShrinkInSmall()
-    if (windowHeight.current) {
-      setMainHeight(windowHeight.current.offsetHeight)
-      setMainWidth(windowHeight.current.offsetWidth)
-      // console.log(mainWidth)
-    }
-    // console.log(window.innerWidth)
-    if (window.innerWidth < 800) {
-      setNavBar(true)
+    // localStorage.setItem('snowOpen', false)
+    if (!isLoading) {
+      if (windowHeight.current) {
+        setMainHeight(windowHeight.current.offsetHeight)
+        setMainWidth(windowHeight.current.offsetWidth)
+        // console.log(mainWidth)
+      }
+      // console.log(window.innerWidth)
+      if (window.innerWidth < 800) {
+        setNavBar(true)
+      }
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [collapse, snowOpen, mainHeight, mainWidth])
+  }, [collapse, snowOpen, mainHeight, mainWidth, isLoading])
 
   useEffect(() => {
     const snowState = JSON.parse(localStorage.getItem('snowOpen'))
-    setSnowOpen(!snowState)
+    setSnowOpen(snowState)
+
     // console.log(snowState)
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -380,7 +386,7 @@ function Main(props) {
                   )}
                   onClick={() => {
                     setSnowOpen(!snowOpen)
-                    localStorage.setItem('snowOpen', snowOpen)
+                    localStorage.setItem('snowOpen', !snowOpen)
                   }}
                 >
                   <div
@@ -397,7 +403,7 @@ function Main(props) {
                       snowOpen && styles.moonActive
                     )}
                   >
-                    <img src={Moon} alt="" />
+                    <img src={SnowIcon} alt="" />
                   </div>
                 </div>
               </div>
@@ -1307,7 +1313,7 @@ function Main(props) {
                     'lg:mt-10',
                     'sm:text-xl',
                     'my-5',
-                    'text-gray-400'
+                    snowOpen ? 'text-white' : 'text-gray-400'
                   )}
                 >
                   台北市文山區
@@ -1320,7 +1326,7 @@ function Main(props) {
                     'lg:mt-10',
                     'sm:text-xl',
                     'my-5',
-                    'text-gray-400'
+                    snowOpen ? 'text-white' : 'text-gray-400'
                   )}
                 >
                   0926266959
@@ -1333,7 +1339,7 @@ function Main(props) {
                     'lg:mt-10',
                     'sm:text-lg',
                     'my-5',
-                    'text-gray-400'
+                    snowOpen ? 'text-white' : 'text-gray-400'
                   )}
                 >
                   tommy8852024@gmail.com

@@ -21,7 +21,9 @@ import MySQLIcon from './IMG/skillIcon/MySQL.svg'
 import PHPIcon from './IMG/skillIcon/PHP.svg'
 import Snow from './snow'
 import Sun from './IMG/sun.svg'
-import Moon from './IMG/moon.svg'
+import SnowIcon from './IMG/snow.svg'
+// import Moon from './IMG/moon.svg'
+
 import Airplane from './Airplane'
 
 import * as echarts from 'echarts'
@@ -175,7 +177,7 @@ function Resume(props) {
 
   useEffect(() => {
     const snowState = JSON.parse(localStorage.getItem('snowOpen'))
-    setSnowOpen(!snowState)
+    setSnowOpen(snowState)
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -278,7 +280,7 @@ function Resume(props) {
                   )}
                   onClick={() => {
                     setSnowOpen(!snowOpen)
-                    localStorage.setItem('snowOpen', snowOpen)
+                    localStorage.setItem('snowOpen', !snowOpen)
                   }}
                 >
                   <div
@@ -295,7 +297,7 @@ function Resume(props) {
                       snowOpen && styles.moonActive
                     )}
                   >
-                    <img src={Moon} alt="" />
+                    <img src={SnowIcon} alt="" />
                   </div>
                 </div>
               </div>
