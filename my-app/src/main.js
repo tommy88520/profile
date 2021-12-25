@@ -230,6 +230,9 @@ function Main(props) {
       // console.log(123)
       setNavBar(true)
     }
+    if (window.innerWidth > 800 && window.pageYOffset <= 400) {
+      setNavBar(false)
+    }
   }
 
   const display = (
