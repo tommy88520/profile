@@ -82,7 +82,7 @@ function Resume(props) {
     },
     yAxis: {
       type: 'category',
-      data: ['隨機應變', '團隊合作', '創意發想'],
+      data: ['創意發想', '團隊合作', '隨機應變'],
     },
     textStyle: {
       fontSize: 20,
