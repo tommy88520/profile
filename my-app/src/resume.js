@@ -52,7 +52,7 @@ function Resume(props) {
   }
   const resumeClick = () => {
     window.open(
-      'https://drive.google.com/file/d/1gco6XJpXHnhPvlgLNT2P7VX41LSoI3Oc/view?usp=sharing'
+      'https://drive.google.com/file/d/1cjwci3a3jS2NmbRqlq6aiPo4wkXMKljx/view?usp=sharing'
     )
   }
   const resume2Click = () => {
