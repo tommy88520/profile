@@ -55,6 +55,11 @@ function Resume(props) {
       'https://drive.google.com/file/d/1gco6XJpXHnhPvlgLNT2P7VX41LSoI3Oc/view?usp=sharing'
     )
   }
+  const resume2Click = () => {
+    window.open(
+      'https://drive.google.com/file/d/1q9vPoPB-LlK1UQl2y2lfEuwmJ5N1_1-b/view?usp=sharing'
+    )
+  }
   const chartOption = {
     tooltip: {
       trigger: 'axis',
@@ -245,12 +250,6 @@ function Resume(props) {
                 )}
               ></div>
             </button>
-            <button
-              className={classnames(collapse ? styles.navLink : styles.show)}
-              onClick={resumeClick}
-            >
-              <span className={classnames(styles.navSkill)}>RESUME</span>
-            </button>
 
             <div
               className={classnames(collapse ? styles.navLink : styles.show)}
@@ -259,6 +258,18 @@ function Resume(props) {
                 <span className={classnames(styles.navSkill)}>Home</span>
               </Link>
             </div>
+            <button
+              className={classnames(collapse ? styles.navLink : styles.show)}
+              onClick={resumeClick}
+            >
+              <span className={classnames(styles.navSkill)}>下載履歷</span>
+            </button>
+            <button
+              className={classnames(collapse ? styles.navLink : styles.show)}
+              onClick={resume2Click}
+            >
+              <span className={classnames(styles.navSkill)}>下載簡歷</span>
+            </button>
             <div
               className={classnames(collapse ? styles.navLink : styles.show)}
             >
