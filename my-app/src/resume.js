@@ -45,7 +45,7 @@ function Resume(props) {
     window.open('https://www.instagram.com/tommy88520/')
   }
   const linkedinClick = () => {
-    window.open('https://www.linkedin.com/in/yan-ming-huang-b4355221a/')
+    window.open('https://www.linkedin.com/in/tommy8852024/')
   }
   const githubClick = () => {
     window.open('https://github.com/tommy88520')
