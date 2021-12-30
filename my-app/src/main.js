@@ -755,6 +755,7 @@ function Main(props) {
               'lg:grid-cols-2',
               'grid-rows-2',
               'lg:grid-rows-none',
+              // 'mt-5',
               hereShrink ? styles.HereInActive : ''
             )}
           >
@@ -782,12 +783,14 @@ function Main(props) {
               <div
                 className={classnames(
                   styles.leftCircle,
+
                   snowOpen && styles.leftCircleDark
                 )}
               ></div>
               <div
                 className={classnames(
                   styles.rightCircle,
+
                   snowOpen && styles.rightCircleDark
                 )}
               ></div>
@@ -798,6 +801,7 @@ function Main(props) {
                 snowOpen ? 'bg-white' : 'bg-primary',
                 'flex',
                 'justify-center'
+                // 'pb-5'
               )}
             >
               <div className="flex flex-col justify-center  items-center h-full">
@@ -807,8 +811,8 @@ function Main(props) {
                     'md:text-4xl',
                     'text-3xl',
                     snowOpen ? 'text-primary' : 'text-white',
-                    'md:mb-10',
-                    // 'mb-5',
+                    // 'md:mb-10',
+                    'mb-5',
                     'text-center'
                   )}
                 >
@@ -851,6 +855,7 @@ function Main(props) {
               'lg:grid-rows-none',
               'pt-5',
               'lg:pt-0',
+
               hereShrink ? styles.HereCoverActive : ''
             )}
           >
@@ -861,7 +866,7 @@ function Main(props) {
                 'flex',
                 'justify-center',
                 'items-center',
-                'md:pb-0',
+                'lg:pb-0',
                 'pb-5'
               )}
             >
@@ -879,6 +884,7 @@ function Main(props) {
                 snowOpen ? 'bg-white' : 'bg-primary',
                 'flex',
                 'justify-center'
+                // 'mb-5'
               )}
             >
               <div className="flex flex-col justify-center  items-center h-full ">
@@ -888,8 +894,8 @@ function Main(props) {
                     'md:text-4xl',
                     'text-3xl',
                     snowOpen ? 'text-primary' : 'text-white',
-                    'md:mb-10',
-                    'mb-5',
+                    // 'md:mb-10',
+                    'mb-10',
                     'text-center'
                   )}
                 >

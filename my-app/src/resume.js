@@ -23,20 +23,29 @@ import Snow from './snow'
 import Sun from './IMG/sun.svg'
 import SnowIcon from './IMG/snow.svg'
 // import Moon from './IMG/moon.svg'
-
 import Airplane from './Airplane'
 
 import * as echarts from 'echarts'
 import { Icon } from '@iconify/react'
+import { css } from '@emotion/react'
+import PacmanLoader from 'react-spinners/PacmanLoader'
 function Resume(props) {
   const { snowOpen, setSnowOpen } = props
   const chart = useRef()
   const skills = useRef()
   const totalHeight = useRef()
   const navbarHeight = useRef() // const resumeHeight = totalHeight.current.offsetHeight
+  const spinHeight = useRef()
   const [navBar, setNavBar] = useState(true)
   const [resumeHeight, setResumeHeight] = useState('')
   const [collapse, setCollapse] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
+  let [color] = useState('#f6c327')
+  let [loading] = useState(true)
+  const override = css`
+    display: block;
+    margin: 0 auto;
+  `
 
   const facebookClick = () => {
     window.open('https://www.facebook.com/tommy8852024')
@@ -164,37 +173,52 @@ function Resume(props) {
     }
   }
   useEffect(() => {
-    const myChart = echarts.init(chart.current)
-    myChart.setOption(chartOption)
-    const mySkills = echarts.init(skills.current)
-    mySkills.setOption(skillsOption)
-    // window.addEventListener('resize', mySkills)
-    if (!!totalHeight && !!navbarHeight) {
-      const total = totalHeight.current.offsetHeight
-      // + navbarHeight.current.offsetHeight
-      // console.log(total)
-      setResumeHeight(total)
+    if (isLoading) {
+      if (!!spinHeight) {
+        const spinH = spinHeight.current.offsetHeight
+        setResumeHeight(spinH)
+      }
+    } else {
+      const myChart = echarts.init(chart.current)
+      myChart.setOption(chartOption)
+      const mySkills = echarts.init(skills.current)
+      mySkills.setOption(skillsOption)
+      if (!!totalHeight && !!navbarHeight) {
+        const total = totalHeight.current.offsetHeight
+        // + navbarHeight.current.offsetHeight
+        // console.log(total)
+        setResumeHeight(total)
+      }
     }
+
+    // if (!isLoading) {
+
+    // }
+    // window.addEventListener('resize', mySkills)
 
     window.addEventListener('resize', resizeChart)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [snowOpen, totalHeight, resumeHeight])
+  }, [snowOpen, totalHeight, resumeHeight, isLoading])
 
   useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
     const snowState = JSON.parse(localStorage.getItem('snowOpen'))
     setSnowOpen(snowState)
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-  return (
-    <>
-      {snowOpen ? (
-        <Snow snowHeight={resumeHeight} />
-      ) : (
-        <Airplane snowHeight={resumeHeight} />
-      )}
-
+  const spin = (
+    <div
+      className={classnames('flex', 'h-screen', 'items-center')}
+      ref={spinHeight}
+    >
+      <PacmanLoader color={color} loading={loading} css={override} size={50} />
+    </div>
+  )
+  const display = (
+    <div>
       <nav className={classnames(styles.navHeaderShrink)} ref={navbarHeight}>
         <div
           className={classnames(
@@ -250,7 +274,6 @@ function Resume(props) {
                 )}
               ></div>
             </button>
-
             <div
               className={classnames(collapse ? styles.navLink : styles.show)}
             >
@@ -441,15 +464,15 @@ function Resume(props) {
               </div>
             </div>
             {/* <div className="p-2">
-                <div className={classnames(styles.IndustryKnowledge, 'px-5')}>
-                  <p>Industry Knowledge</p>
-                  <ul className={classnames('list-disc')}>
-                    <li>User Interface</li>
-                    <li>User experience</li>
-                    <li>撰寫企劃</li>
-                  </ul>
-                </div>
-              </div> */}
+                  <div className={classnames(styles.IndustryKnowledge, 'px-5')}>
+                    <p>Industry Knowledge</p>
+                    <ul className={classnames('list-disc')}>
+                      <li>User Interface</li>
+                      <li>User experience</li>
+                      <li>撰寫企劃</li>
+                    </ul>
+                  </div>
+                </div> */}
             {/* 自評區 */}
             <div className="p-2">
               <div
@@ -681,6 +704,17 @@ function Resume(props) {
           </div>
         </div>
       </div>
+    </div>
+  )
+
+  return (
+    <>
+      {snowOpen ? (
+        <Snow snowHeight={resumeHeight} />
+      ) : (
+        <Airplane snowHeight={resumeHeight} />
+      )}
+      {isLoading ? spin : display}
     </>
   )
 }
