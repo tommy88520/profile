@@ -1304,7 +1304,7 @@ function Main(props) {
             </div>
           </div>
           <div
-            className={classnames(styles.contactSeciton, 'flex', 'flex-col')}
+            className={classnames(styles.contactSection, 'flex', 'flex-col')}
           >
             <div className={classnames(styles.contactMe)}>聯絡方式</div>
             <div
