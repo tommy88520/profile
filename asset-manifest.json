@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/profile/static/css/main.78f627f5.chunk.css",
-    "main.js": "/profile/static/js/main.228eea12.chunk.js",
-    "main.js.map": "/profile/static/js/main.228eea12.chunk.js.map",
+    "main.css": "/profile/static/css/main.61c1cbca.chunk.css",
+    "main.js": "/profile/static/js/main.9218eda0.chunk.js",
+    "main.js.map": "/profile/static/js/main.9218eda0.chunk.js.map",
     "runtime-main.js": "/profile/static/js/runtime-main.e01d8f59.js",
     "runtime-main.js.map": "/profile/static/js/runtime-main.e01d8f59.js.map",
     "static/css/2.96b26686.chunk.css": "/profile/static/css/2.96b26686.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.fbeb867f.chunk.js.map": "/profile/static/js/2.fbeb867f.chunk.js.map",
     "index.html": "/profile/index.html",
     "static/css/2.96b26686.chunk.css.map": "/profile/static/css/2.96b26686.chunk.css.map",
-    "static/css/main.78f627f5.chunk.css.map": "/profile/static/css/main.78f627f5.chunk.css.map",
+    "static/css/main.61c1cbca.chunk.css.map": "/profile/static/css/main.61c1cbca.chunk.css.map",
     "static/js/2.fbeb867f.chunk.js.LICENSE.txt": "/profile/static/js/2.fbeb867f.chunk.js.LICENSE.txt",
     "static/media/main.module.scss": "/profile/static/media/萬芳海報.8bf0f726.png",
     "static/media/Avatar2.11d414dc.jpg": "/profile/static/media/Avatar2.11d414dc.jpg",
@@ -30,7 +30,7 @@
     "static/media/LinkedIn - Negative.3ff9c515.svg": "/profile/static/media/LinkedIn - Negative.3ff9c515.svg",
     "static/media/MySQL.f5972396.svg": "/profile/static/media/MySQL.f5972396.svg",
     "static/media/NCCU.72bd6b60.png": "/profile/static/media/NCCU.72bd6b60.png",
-    "static/media/Node.eec410cf.svg": "/profile/static/media/Node.eec410cf.svg",
+    "static/media/Node.68aa38a7.svg": "/profile/static/media/Node.68aa38a7.svg",
     "static/media/PHP.263997e4.svg": "/profile/static/media/PHP.263997e4.svg",
     "static/media/React.f16f5590.svg": "/profile/static/media/React.f16f5590.svg",
     "static/media/Tailwind.ff7ab297.svg": "/profile/static/media/Tailwind.ff7ab297.svg",
@@ -47,7 +47,7 @@
     "static/js/runtime-main.e01d8f59.js",
     "static/css/2.96b26686.chunk.css",
     "static/js/2.fbeb867f.chunk.js",
-    "static/css/main.78f627f5.chunk.css",
-    "static/js/main.228eea12.chunk.js"
+    "static/css/main.61c1cbca.chunk.css",
+    "static/js/main.9218eda0.chunk.js"
   ]
 }
