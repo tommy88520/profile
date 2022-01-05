@@ -144,7 +144,7 @@ function Main(props) {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [collapse, snowOpen, mainHeight, mainWidth, isLoading])
+  }, [snowOpen, mainHeight, mainWidth, isLoading])
 
   useEffect(() => {
     const snowState = JSON.parse(localStorage.getItem('snowOpen'))
@@ -555,7 +555,6 @@ function Main(props) {
                   <ul className="list-disc">
                     <li>使用 JavaScript 基礎語法</li>
                     <li>了解 ES6 語法</li>
-                    <li>了解 ES6 語法</li>
                   </ul>
                 </div>
               </div>
@@ -616,7 +615,7 @@ function Main(props) {
                   <ul className="list-disc">
                     <li>使用 HTML5 / CSS3 網站設計</li>
                     <li>使用 RWD 響應式網頁設計</li>
-                    <li>使用 Bootstrap 4 / Tailwind 規劃網頁</li>
+                    <li>使用 Bootstrap 4 / TailwindCSS 規劃網頁</li>
                     <li>使用 SCSS 規劃網頁</li>
                   </ul>
                 </div>
@@ -836,7 +835,7 @@ function Main(props) {
                   <br />
                   後端技術：使用Node.js寫入會員、訂單以及
                   <span className="font-bold underline underline-offset-4">
-                    後端驗證(帳號比對、加密過後的密碼比對、機器人比對、驗證碼比對)
+                    後端驗證(帳號比對、加密過後的密碼比對、機器人比對、驗證碼比對)。
                   </span>
                 </p>
               </div>
@@ -1180,7 +1179,7 @@ function Main(props) {
               <div className={classnames(styles.cardImg6)}></div>
               <p className="text-2xl py-5">自行經營網拍</p>
               <p className="text-lg px-5 pb-3">
-                自行找廠商進貨，企劃書、商品、商品照、頁面、文稿、都由自己包辦，月營業額曾連續三個月皆達8萬，受邀獲選優選賣家。
+                自行找廠商進貨，企劃書、商品、商品照、頁面、文稿、都由自己包辦，月營業額曾連續三個月皆達8萬，受邀獲選優選賣家
               </p>
             </div>
           </div>
